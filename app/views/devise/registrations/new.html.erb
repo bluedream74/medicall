@@ -1,9 +1,7 @@
+<div class="w-full px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">新規登録</h2>
 
-  <div class="w-full px-4 md:px-8 mx-auto">
-    <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">新規登録</h2>
-
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="max-w-lg border rounded-lg mx-auto">
 
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -30,5 +28,5 @@
         <p class="text-gray-500 text-sm text-center">登録済みですか? <a href="#" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100">ログイン</a></p>
       </div>
     </div>
-     <% end %>
-  </div>
+    <% end %>
+</div>
