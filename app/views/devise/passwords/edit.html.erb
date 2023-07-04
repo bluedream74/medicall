@@ -1,0 +1,21 @@
+<div class="w-full px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">パスワードリセット</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <div class="max-w-lg border rounded-lg mx-auto">
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="flex flex-col gap-4 p-4 md:p-8">
+      <%= f.hidden_field :reset_password_token, value: params[:reset_password_token] %>
+
+      <div>
+        <label for="New password" class="inline-block text-gray-800 text-sm sm:text-base mb-2">新しいパスワードを入力してください</label>
+        <%= f.password_field :password, autofocus: true, autocomplete: "email", class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 border-gray-300" %>
+      </div>
+
+      <%= f.submit "パスワード再発行", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
+    </div>
+
+  <% end %>
+  </div>
+</div>

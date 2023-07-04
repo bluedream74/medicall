@@ -14,18 +14,18 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230702-56981-wvj627 sitelibdir\=./.gem.20230702-56981-wvj627 clean
+make DESTDIR\= sitearchdir\=./.gem.20230704-23607-hapiab sitelibdir\=./.gem.20230704-23607-hapiab clean
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230702-56981-wvj627 sitelibdir\=./.gem.20230702-56981-wvj627
+make DESTDIR\= sitearchdir\=./.gem.20230704-23607-hapiab sitelibdir\=./.gem.20230704-23607-hapiab
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230702-56981-wvj627 sitelibdir\=./.gem.20230702-56981-wvj627 install
-/usr/local/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230702-56981-wvj627/puma
+make DESTDIR\= sitearchdir\=./.gem.20230704-23607-hapiab sitelibdir\=./.gem.20230704-23607-hapiab install
+/usr/local/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230704-23607-hapiab/puma
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230702-56981-wvj627 sitelibdir\=./.gem.20230702-56981-wvj627 clean
+make DESTDIR\= sitearchdir\=./.gem.20230704-23607-hapiab sitelibdir\=./.gem.20230704-23607-hapiab clean

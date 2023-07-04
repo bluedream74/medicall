@@ -1,0 +1,19 @@
+<div class="w-full px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">パスワード再発行</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="max-w-lg border rounded-lg mx-auto">
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="flex flex-col gap-4 p-4 md:p-8">
+      <div>
+        <label for="email" class="inline-block text-gray-800 text-sm sm:text-base mb-2">メールアドレス</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 border-gray-300" %>
+      </div>
+
+      <%= f.submit "パスワード再発行メールを送信", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
+    </div>
+
+  <% end %>
+  </div>
+</div>
