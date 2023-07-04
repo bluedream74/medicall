@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
   root 'pages#home'
+
+  resource :dashboard, only: [:show]
 
   # devise_for :users, skip: :all
   # devise_scope :user do
