@@ -1,5 +1,25 @@
-<p>Welcome <%= @email %>!</p>
+<p>※このメールは自動送信メールです。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= @email %> 様</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>メディコルサポート事務局でございます。</p>
+<p>この度はメディコルにご登録いただきありがとうございます。</p>
+
+<p>本メールは、ご登録いただいたメールアドレスに間違いがないかの確認になります。<br />
+下記のリンクをクリックいただくことで認証が完了いたします。</p>
+
+<p><%= link_to 'クリック後、登録いただいたメールアドレスとパスワードでログインしてください。', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+
+
+<p>
+覚えがないのにこのメールが届いたという方<br>
+ご迷惑をおかけし申し訳ありません。大変お手数ですが下記メールアドレスまでご連絡をお願いいたします。<br>
+</p>
+<p>info@hump.co.jp</p>
+
+<p>――――――――――――――――――――――――――――――</p>
+メディコル - Medicall 運営元　株式会社Hump<br>
+URL ： medicall.jp<br>
+Mail ： info@hump.co.jp<br>
+<p>――――――――――――――――――――――――――――――</p>
