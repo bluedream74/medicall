@@ -5,3 +5,6 @@
 
 * Rails version
   7.0.6
+
+* Design
+  Tailwind daisyUI
