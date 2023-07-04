@@ -1,0 +1,29 @@
+ja:
+  devise:
+    confirmations:
+      confirmed: "あなたのアカウントはすでに認証されています。"
+      send_instructions: "あなたのアカウントの認証方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "あなたのアカウントが存在する場合、あなたのアカウントの認証方法を数分以内にメールでご連絡します。"
+    failure:
+      already_authenticated: "既にログインしています。"
+      inactive: "アカウントが有効化されていません。"
+      invalid: "%{authentication_keys}またはパスワードが無効です。"
+      locked: "アカウントがロックされています。"
+      last_attempt: "あと一回誤った認証を行うとアカウントがロックされます。"
+      not_found_in_database: "%{authentication_keys}またはパスワードが無効です。"
+      timeout: "セッションがタイムアウトしました。もう一度ログインしてください。"
+      unauthenticated: "続けるには、ログインまたはアカウントを登録してください。"
+      unconfirmed: "続ける前にアカウントを確認してください。"
+    mailer:
+      confirmation_instructions:
+        subject: "アカウントの確認方法"
+      reset_password_instructions:
+        subject: "パスワードのリセット方法"
+      unlock_instructions:
+        subject: "アカウントのロック解除方法"
+      password_change:
+        subject: "パスワードが変更されました"
+    passwords:
+      no_token: "このページには、前に送信された電子メールからアクセスしてください。パスワードのリセットメールを複数回送信すると、最後に送信されたメールからのリンクのみが有効となります。"
+      send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
+      send_paranoid_instructions: "あなたのアカウントが存在する場合、パスワードのリセット方法を数分以内にメールでご連絡します。"
