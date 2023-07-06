@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #   delete 'profile', to: 'devise/registrations#destroy'
   # end
 
-  devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => 'login', :sign_out => 'logout', :edit => 'profile'}
+  devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => 'login', :sign_out => 'logout', :edit => 'account'},
+  controllers: { registrations: 'custom_registrations' }
 
 end
