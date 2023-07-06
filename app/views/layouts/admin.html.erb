@@ -13,12 +13,19 @@
 
   </head>
 
-  <body class="flex flex-col min-h-screen">
-    <main class="flex-grow">
+  <body>
+    <main>
     <%= render "shared/admin_navbar" %>
     <div class="flex overflow-hidden bg-white pt-16">
-      <%= render "shared/admin_sidebar" %>
-      <%= yield %>
+      <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+        <%= render "shared/admin_sidebar" %>
+        <div class="flex flex-col min-h-screen">
+          <div class="pt-6 px-4 flex-grow">
+            <%= yield %>
+          </div>
+          <%= render "shared/admin_footer" %>
+        </div>
+      </div>
     </div>
     </main>
   </body>

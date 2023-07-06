@@ -3,4 +3,8 @@ class DashboardsController < ApplicationController
   def show
     render layout: 'admin'
   end
+
+  def account
+    render layout: 'admin'
+  end
 end
