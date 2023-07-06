@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  get 'sample', to: 'pages#sample'
+
   resource :dashboard, only: [:show]
 
   # devise_for :users, skip: :all
