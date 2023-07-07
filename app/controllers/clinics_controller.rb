@@ -74,9 +74,19 @@ class ClinicsController < ApplicationController
       render :edit_customer
     end
   end
+
   
 
-
+  def destroy_customer
+    @clinic = Clinic.find(params[:id])
+    @customer = Customer.find(params[:customer_id])
+  
+    @clinic.customers.destroy(@customer)
+  
+    redirect_to customer_index_clinic_path(@clinic), notice: "Customer was successfully removed."
+  end
+  
+  
   private
     def set_clinic
       @clinic = Clinic.find(params[:id])

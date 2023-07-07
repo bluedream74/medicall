@@ -25,9 +25,9 @@
                   <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.patient_number %></td>
                   <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
                     <% if customer.list_type == 'is_white_list' %>
-                      <p>ホワイトリスト</p>
+                      <span class="text-xs font-semibold inline-block py-2 px-2 uppercase rounded-full text-sky-600 bg-sky-200 last:mr-0 mr-1">ホワイトリスト</span>
                     <% elsif customer.list_type == 'is_black_list' %>
-                      <p>ブラックリスト</p>
+                      <span class="text-xs font-semibold inline-block py-2 px-2 uppercase rounded-full text-gray-600 bg-gray-200 last:mr-0 mr-1">ブラックリスト</span>
                     <% else %>
                       <p>未選択</p>
                     <% end %>

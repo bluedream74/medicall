@@ -13,8 +13,9 @@ Rails.application.routes.draw do
         get 'add_customer'
         post 'create_customer'
         get 'customer_index'
-        get 'edit_customer/:customer_id', to: 'clinics#edit_customer', as: 'edit_customer' # this routes to clinics#edit_customer
-        patch 'update_customer/:customer_id', to: 'clinics#update_customer', as: 'update_customer' # this routes to clinics#update_customer
+        get 'edit_customer/:customer_id', to: 'clinics#edit_customer', as: 'edit_customer'
+        patch 'update_customer/:customer_id', to: 'clinics#update_customer', as: 'update_customer'
+        delete 'destroy_customer/:customer_id', to: 'clinics#destroy_customer', as: 'destroy_customer'
       end
     end
   end
