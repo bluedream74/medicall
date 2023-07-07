@@ -10,9 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_114713) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_07_001517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clinics", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "tel"
+    t.text "access"
+    t.string "holiday"
+    t.string "reserve"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_clinics", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "clinic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_user_clinics_on_clinic_id"
+    t.index ["user_id"], name: "index_user_clinics_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_114713) do
     t.index ["unconfirmed_email"], name: "index_users_on_unconfirmed_email"
   end
 
+  add_foreign_key "user_clinics", "clinics"
+  add_foreign_key "user_clinics", "users"
 end
