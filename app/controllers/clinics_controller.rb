@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index]
+  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer]
   before_action :check_if_already_registered, only: [:new, :create]
 
   layout 'admin'
@@ -51,11 +51,30 @@ class ClinicsController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       @clinic.clinic_customers.create(customer: @customer)
-      redirect_to @clinic, notice: 'Customer was successfully created.'
+      redirect_to customer_index_clinic_path(@clinic), notice: '電話帳に登録されました。'
     else
       render :add_customer
     end
   end
+
+  
+
+  def edit_customer
+    @clinic = Clinic.find(params[:id])
+    @customer = @clinic.customers.find(params[:customer_id])
+  end
+  
+  
+  def update_customer
+    @customer = @clinic.customers.find(params[:customer_id])
+    if @customer.update(customer_params)
+      redirect_to customer_index_clinic_path(@clinic), notice: '顧客情報が更新されました。'
+    else
+      puts @customer.errors.full_messages
+      render :edit_customer
+    end
+  end
+  
 
 
   private
@@ -74,6 +93,6 @@ class ClinicsController < ApplicationController
     end
 
     def customer_params
-      params.require(:customer).permit(:phone_number, :patient_number, :name, :is_white_list, :is_black_list)
+      params.require(:customer).permit(:phone_number, :patient_number, :name, :list_type)
     end
 end

@@ -14,6 +14,7 @@
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">電話番号</th>
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">診察券番号</th>
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">リスト</th>
+                <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px"></th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
@@ -30,6 +31,13 @@
                     <% else %>
                       <p>未選択</p>
                     <% end %>
+
+                  </td>
+                  <td>
+
+
+
+                  <%= link_to '編集', edit_customer_clinic_path(@clinic, customer), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded float-right text-sm" %>
 
                   </td>
               </tr>
