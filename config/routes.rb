@@ -8,8 +8,21 @@ Rails.application.routes.draw do
   end
 
   scope '/dashboard' do
-    resources :clinics
+    resources :clinics do
+      member do
+        get 'add_customer'
+        post 'create_customer'
+        get 'customer_index'
+        get 'edit_customer/:customer_id', to: 'clinics#edit_customer', as: 'edit_customer'
+        patch 'update_customer/:customer_id', to: 'clinics#update_customer', as: 'update_customer'
+        delete 'destroy_customer/:customer_id', to: 'clinics#destroy_customer', as: 'destroy_customer'
+      end
+    end
   end
+  
+  
+
+  
   
   devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => 'login', :sign_out => 'logout', :edit => 'account-edit'},
   controllers: { registrations: 'custom_registrations' }

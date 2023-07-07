@@ -1,0 +1,49 @@
+<div class="w-full px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">電話帳編集</h2>
+
+  <%= form_with model: [@clinic, @customer], url: update_customer_clinic_path(@clinic, @customer), method: :patch do |f| %>
+  
+
+  <div class="max-w-lg border rounded-lg mx-auto">
+      <div class="flex flex-col gap-4 p-4 md:p-8">
+      <% if @customer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+          <ul>
+          <% @customer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <label for="name" class="inline-block text-gray-800 text-sm sm:text-base mb-2">名前</label>
+        <%= f.text_field :name, autocomplete: "name", class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 border-gray-300" %>
+      </div>
+
+      <div>
+        <label for="phone_number" class="inline-block text-gray-800 text-sm sm:text-base mb-2">電話番号</label>
+        <%= f.text_field :phone_number, autocomplete: "phone_number", class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 border-gray-300" %>
+      </div>
+
+      <div>
+        <label for="patient_number" class="inline-block text-gray-800 text-sm sm:text-base mb-2">診察券番号</label>
+        <%= f.text_field :patient_number, autocomplete: "patient_number", class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 border-gray-300" %>
+      </div>
+
+      <div>
+        <label for="list_type" class="block mb-2 text-sm sm:text-base font-medium text-gray-900 dark:text-gray-400">リスト</label>
+        <%= f.select :list_type, { 'ホワイトリスト' => 'is_white_list', 'ブラックリスト' => 'is_black_list' }, { include_blank: '未選択' }, {class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-4"} %>
+
+      </div>
+
+      <%= f.submit @customer.new_record? ? "登録" : "更新", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
+
+
+      <% end %>
+      <%= button_to '削除', destroy_customer_clinic_path(@clinic, @customer), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>
