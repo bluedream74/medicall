@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
-  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer]
+  before_action :authenticate_user!
+  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index]
   before_action :check_if_already_registered, only: [:new, :create]
 
   layout 'admin'
@@ -35,6 +36,10 @@ class ClinicsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def customer_index
+    @customers = @clinic.customers
   end
 
   def add_customer

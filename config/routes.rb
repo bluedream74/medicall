@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       member do
         get 'add_customer'
         post 'create_customer'
+        get 'customer_index'
       end
     end
   end
