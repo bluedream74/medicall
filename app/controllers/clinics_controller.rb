@@ -45,6 +45,7 @@ class ClinicsController < ApplicationController
   def add_customer
     @customer = Customer.new
   end
+  
 
   def create_customer
     @customer = Customer.new(customer_params)

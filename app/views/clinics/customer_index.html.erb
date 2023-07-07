@@ -5,26 +5,37 @@
     </div>
     <div class="block w-full overflow-x-auto">
       <table class="items-center w-full bg-transparent border-collapse">
+        <% if @customers.empty? %>
+          <p>登録されているデータがありません</p>
+        <% else %>
           <thead>
             <tr>
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">名前</th>
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">電話番号</th>
                 <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">診察券番号</th>
+                <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px">リスト</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
-            <% @customers.each do |customer| %>
-            <tr class="text-gray-500">
-                <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left"><%= customer.name %></th>
-                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.phone_number %></td>
-                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.patient_number %></td>
-                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.phone_number %></td>
-                <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                リスト
-                </td>
-            </tr>
-            <% end %>
+              <% @customers.each do |customer| %>
+              <tr class="text-gray-500">
+                  <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left"><%= customer.name %></th>
+                  <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.phone_number %></td>
+                  <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4"><%= customer.patient_number %></td>
+                  <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
+                    <% if customer.list_type == 'is_white_list' %>
+                      <p>ホワイトリスト</p>
+                    <% elsif customer.list_type == 'is_black_list' %>
+                      <p>ブラックリスト</p>
+                    <% else %>
+                      <p>未選択</p>
+                    <% end %>
+
+                  </td>
+              </tr>
+              <% end %>
           </tbody>
+        <% end %>
       </table>
     </div>
 </div>
