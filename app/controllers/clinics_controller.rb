@@ -1,5 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:edit, :update]
+  before_action :check_if_already_registered, only: [:new, :create]
 
   layout 'admin'
 
@@ -19,7 +20,7 @@ class ClinicsController < ApplicationController
         # ユーザーとクリニックの関連付けを行う
         current_user.clinics << @clinic
   
-        format.html { redirect_to @clinic, notice: 'Clinic was successfully created.' }
+        format.html { redirect_to @clinic, notice: 'クリニックが無事に登録されました。' }
         format.json { render :show, status: :created, location: @clinic }
       else
         format.html { render :new }
@@ -30,7 +31,7 @@ class ClinicsController < ApplicationController
 
   def update
     if @clinic.update(clinic_params)
-      redirect_to @clinic, notice: '更新しました'
+      redirect_to account_dashboard_path, notice: '更新しました'
     else
       render :edit
     end
@@ -40,6 +41,12 @@ class ClinicsController < ApplicationController
   private
     def set_clinic
       @clinic = Clinic.find(params[:id])
+    end
+
+    def check_if_already_registered
+      if current_user.clinics.exists?
+        redirect_to dashboard_account_path, notice: 'すでにクリニックを登録されています。'
+      end
     end
 
     def clinic_params
