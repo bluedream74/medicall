@@ -1,14 +1,8 @@
 class ClinicsController < ApplicationController
-  before_action :set_clinic, only: [:show, :edit, :update, :destroy]
+  before_action :set_clinic, only: [:edit, :update]
 
   layout 'admin'
 
-  def index
-    @clinics = Clinic.all
-  end
-
-  def show
-  end
 
   def new
     @clinic = Clinic.new
@@ -19,26 +13,29 @@ class ClinicsController < ApplicationController
 
   def create
     @clinic = Clinic.new(clinic_params)
-
-    if @clinic.save
-      redirect_to @clinic, notice: 'Clinic was successfully created.'
-    else
-      render :new
+  
+    respond_to do |format|
+      if @clinic.save
+        # ユーザーとクリニックの関連付けを行う
+        current_user.clinics << @clinic
+  
+        format.html { redirect_to @clinic, notice: 'Clinic was successfully created.' }
+        format.json { render :show, status: :created, location: @clinic }
+      else
+        format.html { render :new }
+        format.json { render json: @clinic.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def update
     if @clinic.update(clinic_params)
-      redirect_to @clinic, notice: 'Clinic was successfully updated.'
+      redirect_to @clinic, notice: '更新しました'
     else
       render :edit
     end
   end
 
-  def destroy
-    @clinic.destroy
-    redirect_to clinics_url, notice: 'Clinic was successfully destroyed.'
-  end
 
   private
     def set_clinic
