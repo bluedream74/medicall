@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   end
 
   scope '/dashboard' do
-    resources :clinics
+    resources :clinics do
+      member do
+        get 'add_customer'
+        post 'create_customer'
+      end
+    end
   end
   
   devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => 'login', :sign_out => 'logout', :edit => 'account-edit'},

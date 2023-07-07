@@ -1,5 +1,5 @@
 class ClinicsController < ApplicationController
-  before_action :set_clinic, only: [:edit, :update]
+  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer]
   before_action :check_if_already_registered, only: [:new, :create]
 
   layout 'admin'
@@ -37,6 +37,20 @@ class ClinicsController < ApplicationController
     end
   end
 
+  def add_customer
+    @customer = Customer.new
+  end
+
+  def create_customer
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      @clinic.clinic_customers.create(customer: @customer)
+      redirect_to @clinic, notice: 'Customer was successfully created.'
+    else
+      render :add_customer
+    end
+  end
+
 
   private
     def set_clinic
@@ -51,5 +65,9 @@ class ClinicsController < ApplicationController
 
     def clinic_params
       params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve)
+    end
+
+    def customer_params
+      params.require(:customer).permit(:phone_number, :patient_number, :name, :is_white_list, :is_black_list)
     end
 end

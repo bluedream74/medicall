@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_07_001517) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_07_024435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clinic_customers", force: :cascade do |t|
+    t.bigint "clinic_id", null: false
+    t.bigint "customer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_clinic_customers_on_clinic_id"
+    t.index ["customer_id"], name: "index_clinic_customers_on_customer_id"
+  end
 
   create_table "clinics", force: :cascade do |t|
     t.string "name"
@@ -21,6 +30,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_001517) do
     t.text "access"
     t.string "holiday"
     t.string "reserve"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "phone_number"
+    t.string "patient_number"
+    t.string "name"
+    t.boolean "is_white_list"
+    t.boolean "is_black_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_001517) do
     t.index ["unconfirmed_email"], name: "index_users_on_unconfirmed_email"
   end
 
+  add_foreign_key "clinic_customers", "clinics"
+  add_foreign_key "clinic_customers", "customers"
   add_foreign_key "user_clinics", "clinics"
   add_foreign_key "user_clinics", "users"
 end
