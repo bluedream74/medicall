@@ -20,7 +20,7 @@ class ClinicsController < ApplicationController
         # ユーザーとクリニックの関連付けを行う
         current_user.clinics << @clinic
   
-        format.html { redirect_to @clinic, notice: 'クリニックが無事に登録されました。' }
+        format.html { redirect_to dashboard_path, notice: 'クリニックが無事に登録されました。' }
         format.json { render :show, status: :created, location: @clinic }
       else
         format.html { render :new }
