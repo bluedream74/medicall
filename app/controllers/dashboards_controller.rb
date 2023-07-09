@@ -12,6 +12,8 @@ class DashboardsController < ApplicationController
     @clinic = current_user.clinics.first
     @user = current_user
     @clinics = @user.clinics
+    @clinic_hours = @clinic.clinic_hours
+    @clinic_closures = @clinic.clinic_closures
     
     render layout: 'admin'
   end
