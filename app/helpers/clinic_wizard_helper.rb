@@ -1,0 +1,2 @@
+module ClinicWizardHelper
+end

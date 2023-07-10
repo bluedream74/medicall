@@ -44,3 +44,4 @@ end
 gem 'devise'
 gem 'i18n'
 gem 'enum_help'
+gem 'wicked'
