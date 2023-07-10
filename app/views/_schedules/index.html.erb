@@ -1,0 +1,31 @@
+<%# app/views/schedules/index.html.erb %>
+
+<h1><%= @clinic.name %> Schedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Session</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clinic.schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.day_of_week %></td>
+        <td><%= schedule.session %></td>
+        <td><%= schedule.start_time.strftime("%H:%M") %></td>
+        <td><%= schedule.end_time.strftime("%H:%M") %></td>
+        <td><%= link_to 'Show', clinic_schedule_path(@clinic, schedule) %></td>
+        <td><%= link_to 'Edit', edit_clinic_schedule_path(@clinic, schedule) %></td>
+        <td><%= link_to 'Destroy', clinic_schedule_path(@clinic, schedule), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Schedule', new_clinic_schedule_path(@clinic) %>

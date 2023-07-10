@@ -1,4 +1,10 @@
 ja:
+  enums:
+    schedule:
+      session:
+        session1: "1部"
+        session2: "2部"
+        session3: "3部"
   devise:
     confirmations:
       confirmed: "あなたのアカウントはすでに認証されています。"

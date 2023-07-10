@@ -10,18 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_09_012501) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_09_043518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "clinic_closures", force: :cascade do |t|
-    t.bigint "clinic_id", null: false
-    t.date "closure_date", null: false
-    t.string "reason"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_clinic_closures_on_clinic_id"
-  end
 
   create_table "clinic_customers", force: :cascade do |t|
     t.bigint "clinic_id", null: false
@@ -30,17 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_012501) do
     t.datetime "updated_at", null: false
     t.index ["clinic_id"], name: "index_clinic_customers_on_clinic_id"
     t.index ["customer_id"], name: "index_clinic_customers_on_customer_id"
-  end
-
-  create_table "clinic_hours", force: :cascade do |t|
-    t.bigint "clinic_id", null: false
-    t.integer "day_of_week", null: false
-    t.string "session", null: false
-    t.time "start_time", null: false
-    t.time "end_time", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_clinic_hours_on_clinic_id"
   end
 
   create_table "clinics", force: :cascade do |t|
@@ -62,6 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_012501) do
     t.boolean "is_black_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "clinic_id", null: false
+    t.integer "day_of_week"
+    t.integer "session"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_schedules_on_clinic_id"
   end
 
   create_table "user_clinics", force: :cascade do |t|
@@ -91,10 +82,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_012501) do
     t.index ["unconfirmed_email"], name: "index_users_on_unconfirmed_email"
   end
 
-  add_foreign_key "clinic_closures", "clinics"
   add_foreign_key "clinic_customers", "clinics"
   add_foreign_key "clinic_customers", "customers"
-  add_foreign_key "clinic_hours", "clinics"
+  add_foreign_key "schedules", "clinics"
   add_foreign_key "user_clinics", "clinics"
   add_foreign_key "user_clinics", "users"
 end

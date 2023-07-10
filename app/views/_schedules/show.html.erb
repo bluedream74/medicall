@@ -1,0 +1,29 @@
+<!-- app/views/clinics/show.html.erb -->
+<h2><%= @clinic.name %>の診療時間</h2>
+
+<% matrix = schedule_matrix(@clinic.schedules) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>時間</th>
+      <th>月</th>
+      <th>火</th>
+      <th>水</th>
+      <th>木</th>
+      <th>金</th>
+      <th>土</th>
+      <th>日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% matrix.each do |time, days| %>
+      <tr>
+        <td><%= time %></td>
+        <% Schedule.day_of_weeks.keys.each do |day| %>
+          <td><%= days[day] ? '◯' : ' ' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
