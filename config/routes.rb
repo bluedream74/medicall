@@ -13,8 +13,6 @@ Rails.application.routes.draw do
       put 'schedule_info', to: 'clinic_wizard#update_schedule'
     end
   end
-  
-
 
   scope '/dashboard' do
     resources :clinics do

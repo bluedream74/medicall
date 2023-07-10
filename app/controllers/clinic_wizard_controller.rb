@@ -3,6 +3,8 @@ class ClinicWizardController < ApplicationController
 
   steps :clinic_info, :schedule_info
 
+  layout 'admin'
+
   def show
     @clinic = Clinic.find(params[:clinic_id])
     render_wizard

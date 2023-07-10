@@ -1,29 +1,23 @@
-<%= form_with(model: @clinic, url: { action: :update_schedule }, method: :put, local: true) do |f| %>
-<%= f.hidden_field :clinic_id, value: @clinic.id %>
+<div class="pt-6 px-4">
+  <div class="w-full grid grid-cols-1">
+    <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8  2xl:col-span-2">
+    <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療時間</h2>
+    <%= form_with(model: @clinic, url: { action: :update_schedule }, method: :put, local: true) do |f| %>
+      <%= f.hidden_field :clinic_id, value: @clinic.id %>
 
-  <%= f.fields_for :schedules do |schedule_fields| %>
-  <div class="field">
-    <%= schedule_fields.label :day_of_week %>
-    <%= schedule_fields.select :day_of_week, Schedule.day_of_weeks.keys %>
-  </div>
-  <div class="field">
-    <%= schedule_fields.label :session %>
-    <%= schedule_fields.select :session, Schedule.sessions.keys %>
-  </div>
-  <div class="field">
-    <%= schedule_fields.label :start_time %>
-    <%= schedule_fields.time_select :start_time, { minute_step: 15 } %>
-  </div>
-  <div class="field">
-    <%= schedule_fields.label :end_time %>
-    <%= schedule_fields.time_select :end_time, { minute_step: 15 } %>
-  </div>
+      <div id="schedules" data-controller="clinic-form">
+      
+        <%= f.fields_for :schedules, wrapper_class: 'nested-fields' do |schedule_fields| %>
+          <%= render 'schedule_fields', f: schedule_fields %>
+        <% end %>
+      </div>
 
-  
+      <%= link_to "Add Schedule", "#", data: { action: 'click->clinic-form#addSchedule' }, class: 'add_fields' %>
 
-  <%= link_to 'Add Schedule', '#', id: 'add_schedule' %>
-  <hr />
-  <% end %>
+      <%= f.submit "保存" %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
-  <%= f.submit "保存" %>
-<% end %>
+
