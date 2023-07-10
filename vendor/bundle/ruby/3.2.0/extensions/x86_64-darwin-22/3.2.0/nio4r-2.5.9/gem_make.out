@@ -13,10 +13,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-hh59ba sitelibdir\=./.gem.20230709-9189-hh59ba clean
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-ua1bw sitelibdir\=./.gem.20230710-9945-ua1bw clean
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-hh59ba sitelibdir\=./.gem.20230709-9189-hh59ba
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-ua1bw sitelibdir\=./.gem.20230710-9945-ua1bw
 compiling bytebuffer.c
 bytebuffer.c:308:20: warning: implicit conversion loses integer precision: 'ssize_t' (aka 'long') to 'int' [-Wshorten-64-to-32]
     return INT2NUM(bytes_read);
@@ -288,8 +288,8 @@ compiling selector.c
 linking shared-object nio4r_ext.bundle
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-hh59ba sitelibdir\=./.gem.20230709-9189-hh59ba install
-/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20230709-9189-hh59ba
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-ua1bw sitelibdir\=./.gem.20230710-9945-ua1bw install
+/usr/local/bin/ginstall -c -m 0755 nio4r_ext.bundle ./.gem.20230710-9945-ua1bw
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/nio4r-2.5.9/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-hh59ba sitelibdir\=./.gem.20230709-9189-hh59ba clean
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-ua1bw sitelibdir\=./.gem.20230710-9945-ua1bw clean

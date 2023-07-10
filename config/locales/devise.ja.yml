@@ -1,10 +1,4 @@
 ja:
-  enums:
-    schedule:
-      session:
-        session1: "1部"
-        session2: "2部"
-        session3: "3部"
   devise:
     confirmations:
       confirmed: "あなたのアカウントはすでに認証されています。"
@@ -33,3 +27,6 @@ ja:
       no_token: "このページには、前に送信された電子メールからアクセスしてください。パスワードのリセットメールを複数回送信すると、最後に送信されたメールからのリンクのみが有効となります。"
       send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "あなたのアカウントが存在する場合、パスワードのリセット方法を数分以内にメールでご連絡します。"
+    errors:
+      messages:
+        taken: "は既に使用されています"

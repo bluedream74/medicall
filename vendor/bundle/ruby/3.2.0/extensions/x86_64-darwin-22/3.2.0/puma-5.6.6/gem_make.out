@@ -14,18 +14,18 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-otllsk sitelibdir\=./.gem.20230709-9189-otllsk clean
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-agol3g sitelibdir\=./.gem.20230710-9945-agol3g clean
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-otllsk sitelibdir\=./.gem.20230709-9189-otllsk
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-agol3g sitelibdir\=./.gem.20230710-9945-agol3g
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-otllsk sitelibdir\=./.gem.20230709-9189-otllsk install
-/usr/local/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230709-9189-otllsk/puma
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-agol3g sitelibdir\=./.gem.20230710-9945-agol3g install
+/usr/local/bin/ginstall -c -m 0755 puma_http11.bundle ./.gem.20230710-9945-agol3g/puma
 
 current directory: /Users/hisazumimasahito/Desktop/medicall/vendor/bundle/ruby/3.2.0/gems/puma-5.6.6/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20230709-9189-otllsk sitelibdir\=./.gem.20230709-9189-otllsk clean
+make DESTDIR\= sitearchdir\=./.gem.20230710-9945-agol3g sitelibdir\=./.gem.20230710-9945-agol3g clean
