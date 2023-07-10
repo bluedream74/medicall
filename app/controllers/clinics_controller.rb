@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer]
+  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer, :edit_schedule]
   before_action :check_if_already_registered, only: [:new, :create]
 
   layout 'admin'
@@ -11,6 +11,10 @@ class ClinicsController < ApplicationController
   end
 
   def edit
+    (7 - @clinic.schedules.count).times do 
+      @clinic.schedules.build(session: '午前')
+      @clinic.schedules.build(session: '午後')
+    end
   end
 
   def create
@@ -85,6 +89,15 @@ class ClinicsController < ApplicationController
   
     redirect_to customer_index_clinic_path(@clinic), notice: "Customer was successfully removed."
   end
+
+  def edit_schedule
+    (7 - @clinic.schedules.count).times do 
+      @clinic.schedules.build(session: '午前')
+      @clinic.schedules.build(session: '午後')
+    end
+  end
+
+  
   
   
   private
@@ -99,10 +112,11 @@ class ClinicsController < ApplicationController
     end
 
     def clinic_params
-      params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve)
+      params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve, schedules_attributes: [:id, :day_of_week, :session, :start_time, :end_time, :_destroy])
     end
 
     def customer_params
       params.require(:customer).permit(:phone_number, :patient_number, :name, :list_type)
     end
+    
 end

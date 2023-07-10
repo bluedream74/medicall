@@ -83,9 +83,15 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    hotwire-rails (0.1.3)
+      rails (>= 6.0.0)
+      stimulus-rails
+      turbo-rails
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.1)
@@ -120,9 +126,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.15.2-x86_64-darwin)
+    nokogiri (1.15.3-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.3)
@@ -162,7 +166,7 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     redis (4.8.1)
-    reline (0.3.5)
+    reline (0.3.6)
       io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
@@ -198,6 +202,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wicked (2.0.0)
+      railties (>= 3.0.7)
     zeitwerk (2.6.8)
 
 PLATFORMS
@@ -208,6 +214,9 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  enum_help
+  hotwire-rails (~> 0.1.3)
+  i18n
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -220,6 +229,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  wicked
 
 RUBY VERSION
    ruby 3.2.2p53

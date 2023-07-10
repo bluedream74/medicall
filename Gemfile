@@ -42,3 +42,7 @@ group :development do
 end
 
 gem 'devise'
+gem 'i18n'
+gem 'enum_help'
+gem 'wicked'
+gem 'hotwire-rails', '~> 0.1.3'

@@ -2,6 +2,8 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_clinic, only: [:customer_index, :account, :show]
 
+  include SchedulesHelper
+
   def show
     @clinic = current_user.clinics.first
     render layout: 'admin'
@@ -12,6 +14,8 @@ class DashboardsController < ApplicationController
     @clinic = current_user.clinics.first
     @user = current_user
     @clinics = @user.clinics
+    @schedules = Schedule.where(clinic_id: @clinic.id)
+    @matrix = schedule_matrix(@schedules)
     
     render layout: 'admin'
   end
