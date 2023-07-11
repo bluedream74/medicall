@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        record_not_found: "レコードが見つかりませんでした"
+        record_not_unique: "レコードが一意性制約に違反しています"
+        connection_not_established: "データベースへの接続が確立されていません"
+        statement_invalid: "無効なSQL文です"
+        deadlock_detected: "デッドロックが検出されました"
+        serialization_failure: "シリアライズに失敗しました"
+        deserialization_failure: "デシリアライズに失敗しました"
+        attribute_missing: "属性が見つかりません: %{attribute}"
+        attribute_invalid: "属性が無効です: %{attribute}"
+        attribute_undefined: "未定義の属性です: %{attribute}"
+        not_implemented: "未実装のメソッドです: %{method_name}"
+        timeout: "タイムアウトが発生しました"
+      models:
+        user:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+              too_long: "名前が長すぎます（%{count}文字以内で入力してください）"
+            email:
+              invalid: "メールアドレスが正しくありません"

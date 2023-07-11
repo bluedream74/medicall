@@ -1,20 +1,30 @@
-<%= f.fields_for :schedules do |schedule_form| %>
-  <div class="field">
-    <%= schedule_form.label :day_of_week %>
-    <%= schedule_form.select :day_of_week, Schedule.day_of_weeks.keys %>
-  </div>
-  <div class="field">
-    <%= schedule_form.label :session %>
-    <%= schedule_form.select :session, Schedule.sessions_i18n.invert %>
-  </div>
-  <div class="field">
-    <%= schedule_form.label :start_time %>
-    <%= schedule_form.time_select :start_time, { minute_step: 15 } %>
-  </div>
-  <div class="field">
-    <%= schedule_form.label :end_time %>
-    <%= schedule_form.time_select :end_time, { minute_step: 15 } %>
-  </div>
-  <%= link_to 'Add Schedule', '#', id: 'add_schedule' %>
-  <hr />
+<%= turbo_frame_tag 'clinic_wizard' do %>
+
+  <%= form_with(model: @clinic, url: @clinic.new_record? ? create_clinic_wizard_path : update_info_clinic_wizard_path(@clinic), local: true, data: { controller: "clinic-form", action: "clinic-form#submit" }) do |f| %>
+
+    
+    <%= f.fields_for :schedules do |schedule_form| %>
+      <div class="field">
+        <%= schedule_form.label :day_of_week %>
+        <%= schedule_form.select :day_of_week, Schedule.day_of_weeks.keys %>
+      </div>
+      <div class="field">
+        <%= schedule_form.label :session %>
+        <%= schedule_form.select :session, Schedule.sessions_i18n.invert %>
+      </div>
+      <div class="field">
+        <%= schedule_form.label :start_time %>
+        <%= schedule_form.time_select :start_time, { minute_step: 15 } %>
+      </div>
+      <div class="field">
+        <%= schedule_form.label :end_time %>
+        <%= schedule_form.time_select :end_time, { minute_step: 15 } %>
+      </div>
+      <%= link_to 'Add Schedule', '#', id: 'add_schedule' %>
+      <hr />
+
+
+      <%= f.submit '次へ' %>
+    <% end %>
+  <% end %>
 <% end %>

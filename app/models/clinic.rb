@@ -9,7 +9,6 @@ class Clinic < ApplicationRecord
   accepts_nested_attributes_for :schedules, allow_destroy: true
 
   def schedule_info_complete?
-    # !self.start_time.nil? && !self.end_time.nil?
     schedules.present?
   end
   

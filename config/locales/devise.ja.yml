@@ -29,4 +29,4 @@ ja:
       send_paranoid_instructions: "あなたのアカウントが存在する場合、パスワードのリセット方法を数分以内にメールでご連絡します。"
     errors:
       messages:
-        taken: "は既に使用されています"
+      taken: "は既に使用されています"

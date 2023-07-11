@@ -1,0 +1,32 @@
+<div class="w-full px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療日登録</h2>
+    <%= turbo_frame_tag 'clinic_wizard' do %>
+      <%= form_with(model: @clinic, url: @clinic.new_record? ? create_clinic_wizard_path : update_info_clinic_wizard_path(@clinic), local: true, data: { controller: "clinic-form", action: "clinic-form#submit" }) do |f| %>
+        <%= f.fields_for :schedules do |schedule_form| %>
+
+          <div class="field">
+            <%= schedule_form.label :day_of_week %>
+            <%= schedule_form.select :day_of_week, Schedule.day_of_weeks.keys %>
+          </div>
+          <div class="field">
+            <%= schedule_form.label :session %>
+            <%= schedule_form.select :session, Schedule.sessions_i18n.invert %>
+          </div>
+          <div class="field">
+            <%= schedule_form.label :start_time %>
+            <%= schedule_form.time_select :start_time, { minute_step: 15 } %>
+          </div>
+          <div class="field">
+            <%= schedule_form.label :end_time %>
+            <%= schedule_form.time_select :end_time, { minute_step: 15 } %>
+          </div>
+
+          <hr />
+          
+        <% end %>
+        <%= link_to 'Add Schedule', '#', id: 'add_schedule' %>
+
+        <%= f.submit '次へ' %>
+      <% end %>
+    <% end %>
+</div>

@@ -6,7 +6,12 @@ class DashboardsController < ApplicationController
 
   def show
     @clinic = current_user.clinics.first
-    render layout: 'admin'
+
+    if @clinic.nil?
+      redirect_to new_clinic_path, notice: 'You must create a clinic first.'
+    else
+      render layout: 'admin'
+    end
   end
 
   def account

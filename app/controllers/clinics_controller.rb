@@ -5,34 +5,31 @@ class ClinicsController < ApplicationController
 
   layout 'admin'
 
-
   def new
     @clinic = Clinic.new
   end
+  
+
+  # def create
+  #   @clinic = Clinic.new(clinic_params)
+  
+  #   respond_to do |format|
+  #     if @clinic.save
+  #       # ユーザーとクリニックの関連付けを行う
+  #       current_user.clinics << @clinic
+  
+  #       format.html { redirect_to dashboard_path, notice: 'クリニックが無事に登録されました。' }
+  #       format.json { render :show, status: :created, location: @clinic }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @clinic.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   def edit
-    (7 - @clinic.schedules.count).times do 
-      @clinic.schedules.build(session: '午前')
-      @clinic.schedules.build(session: '午後')
-    end
   end
 
-  def create
-    @clinic = Clinic.new(clinic_params)
-  
-    respond_to do |format|
-      if @clinic.save
-        # ユーザーとクリニックの関連付けを行う
-        current_user.clinics << @clinic
-  
-        format.html { redirect_to dashboard_path, notice: 'クリニックが無事に登録されました。' }
-        format.json { render :show, status: :created, location: @clinic }
-      else
-        format.html { render :new }
-        format.json { render json: @clinic.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   def update
     if @clinic.update(clinic_params)
@@ -41,7 +38,7 @@ class ClinicsController < ApplicationController
       render :edit
     end
   end
-
+  
   def customer_index
     @customers = @clinic.customers
   end
@@ -61,7 +58,6 @@ class ClinicsController < ApplicationController
     end
   end
 
-  
 
   def edit_customer
     @clinic = Clinic.find(params[:id])
@@ -103,6 +99,7 @@ class ClinicsController < ApplicationController
   private
     def set_clinic
       @clinic = Clinic.find(params[:id])
+      # @clinic = Clinic.find(params[:clinic_id])
     end
 
     def check_if_already_registered

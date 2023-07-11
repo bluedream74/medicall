@@ -7,12 +7,17 @@ Rails.application.routes.draw do
     get 'account', on: :member
   end
 
-  resources :clinic_wizard, only: [:show, :update] do
+  resources :clinic_wizard, only: [], path: 'clinic_wizard' do
     collection do
-      put 'clinic_info', to: 'clinic_wizard#update_clinic_info'
-      put 'schedule_info', to: 'clinic_wizard#update_schedule'
+      post :create, path: '/', as: 'create'
+    end
+    member do
+      get :edit_info, path: '/edit_info', as: 'edit_info'
+      patch :update_info, path: '/update_info', as: 'update_info'
     end
   end
+
+  
 
   scope '/dashboard' do
     resources :clinics do
