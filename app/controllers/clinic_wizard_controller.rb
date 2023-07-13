@@ -21,20 +21,17 @@ class ClinicWizardController < ApplicationController
   def edit_info
     @clinic = Clinic.find(params[:id])
     render 'clinic_wizard/edit'
-  end
-  
-  
+  end 
 
   def update_info
     @clinic = Clinic.find(params[:id])
     if @clinic.update(clinic_params)
-      # If you have more steps, render the view for the next step,
-      # otherwise redirect to the success page
-      redirect_to account_dashboard_path
+      redirect_to account_dashboard_path, notice: "更新しました"
     else
       render :edit
     end
   end
+
 
   def update
     @clinic = Clinic.find(params[:id])

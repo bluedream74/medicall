@@ -8,24 +8,6 @@ class ClinicsController < ApplicationController
   def new
     @clinic = Clinic.new
   end
-  
-
-  # def create
-  #   @clinic = Clinic.new(clinic_params)
-  
-  #   respond_to do |format|
-  #     if @clinic.save
-  #       # ユーザーとクリニックの関連付けを行う
-  #       current_user.clinics << @clinic
-  
-  #       format.html { redirect_to dashboard_path, notice: 'クリニックが無事に登録されました。' }
-  #       format.json { render :show, status: :created, location: @clinic }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @clinic.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   def edit
   end
@@ -68,14 +50,12 @@ class ClinicsController < ApplicationController
   def update_customer
     @customer = @clinic.customers.find(params[:customer_id])
     if @customer.update(customer_params)
-      redirect_to customer_index_clinic_path(@clinic), notice: '顧客情報が更新されました。'
+      redirect_to customer_index_clinic_path(@clinic), notice: '患者情報が更新されました。'
     else
       puts @customer.errors.full_messages
       render :edit_customer
     end
   end
-
-  
 
   def destroy_customer
     @clinic = Clinic.find(params[:id])
@@ -83,7 +63,7 @@ class ClinicsController < ApplicationController
   
     @clinic.customers.destroy(@customer)
   
-    redirect_to customer_index_clinic_path(@clinic), notice: "Customer was successfully removed."
+    redirect_to customer_index_clinic_path(@clinic), notice: "削除しました"
   end
 
   def edit_schedule
@@ -93,13 +73,9 @@ class ClinicsController < ApplicationController
     end
   end
 
-  
-  
-  
   private
     def set_clinic
       @clinic = Clinic.find(params[:id])
-      # @clinic = Clinic.find(params[:clinic_id])
     end
 
     def check_if_already_registered

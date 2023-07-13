@@ -1,4 +1,4 @@
-import { Notification } from 'stimulus-notification'
+import { Notification } from "@hotwired/stimulus"
 
 export default class extends Notification {
   connect() {
@@ -6,3 +6,4 @@ export default class extends Notification {
     console.log('Do what you want here.')
   }
 }
+
