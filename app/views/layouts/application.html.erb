@@ -15,6 +15,21 @@
 
   <body class="flex flex-col min-h-screen">
     <main class="flex-grow">
+
+      <% if flash[:success] %>
+        <%= render "shared/notifications", locals: { message: flash[:success] } %>
+      <% end %>
+
+      <% if flash[:danger] %>
+        <%= render "shared/notifications", locals: { message: flash[:danger] } %>
+      <% end %>
+
+      <% if flash[:warning] %>
+        <%= render "shared/notifications", locals: { message: flash[:warning] } %>
+      <% end %>
+
+
+
       <%= render "shared/navbar" %>
       <%= yield %>
     </main>

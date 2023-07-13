@@ -9,12 +9,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
 
 
   </head>
 
   <body>
     <main>
+    <%= render "shared/notifications", locals: { message: flash[:notice] } %>
     <%= render "shared/admin_navbar" %>
     <div class="flex overflow-hidden bg-white pt-16">
       <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
@@ -32,4 +34,6 @@
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+  
 </html>

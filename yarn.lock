@@ -118,6 +118,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:^2.9.3":
+  version: 2.11.8
+  resolution: "@popperjs/core@npm:2.11.8"
+  checksum: e5c69fdebf52a4012f6a1f14817ca8e9599cb1be73dd1387e1785e2ed5e5f0862ff817f420a87c7fc532add1f88a12e25aeb010ffcbdc98eace3d55ce2139cf0
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -561,6 +568,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flowbite@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "flowbite@npm:1.7.0"
+  dependencies:
+    "@popperjs/core": ^2.9.3
+    mini-svg-data-uri: ^1.4.3
+  checksum: 3efa24064bb4992e92893c3edee866aa4db570a2a308275ecbd77fe0068d7bd325963fd8f4c608b0de44b51411b13f33606fe7facc1239a3784b5a3f4ae63aea
+  languageName: node
+  linkType: hard
+
 "foreground-child@npm:^3.1.0":
   version: 3.1.1
   resolution: "foreground-child@npm:3.1.1"
@@ -719,6 +736,13 @@ __metadata:
   dependencies:
     function-bind: ^1.1.1
   checksum: b9ad53d53be4af90ce5d1c38331e712522417d017d5ef1ebd0507e07c2fbad8686fffb8e12ddecd4c39ca9b9b47431afbb975b8abf7f3c3b82c98e9aad052792
+  languageName: node
+  linkType: hard
+
+"hotkeys-js@npm:>=3":
+  version: 3.11.2
+  resolution: "hotkeys-js@npm:3.11.2"
+  checksum: 8e3d984628d2dcf75519017cfdb2c936e7bd0598cf87e3b11e90a5a0b104105042f9979de0118061e819fca95be9c26f27f76447ceeff726678737aaedcd9707
   languageName: node
   linkType: hard
 
@@ -964,6 +988,15 @@ __metadata:
     braces: ^3.0.2
     picomatch: ^2.3.1
   checksum: 02a17b671c06e8fefeeb6ef996119c1e597c942e632a21ef589154f23898c9c6a9858526246abb14f8bca6e77734aa9dcf65476fca47cedfb80d9577d52843fc
+  languageName: node
+  linkType: hard
+
+"mini-svg-data-uri@npm:^1.4.3":
+  version: 1.4.4
+  resolution: "mini-svg-data-uri@npm:1.4.4"
+  bin:
+    mini-svg-data-uri: cli.js
+  checksum: 997f1fbd8d59a70f03761e18626d335197a3479cb9d1ff75678e4b64b864d32a0b8fc18115eabde035e5299b8b4a354a78e57dd6ac10f9d604162a6170898d09
   languageName: node
   linkType: hard
 
@@ -1444,6 +1477,8 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     daisyui: ^3.1.7
+    flowbite: ^1.7.0
+    stimulus-notification: ^2.2.0
     stimulus-use: ^0.52.0
   languageName: unknown
   linkType: soft
@@ -1560,6 +1595,28 @@ __metadata:
   dependencies:
     minipass: ^5.0.0
   checksum: fb14da9f8a72b04eab163eb13a9dda11d5962cd2317f85457c4e0b575e9a6e0e3a6a87b5bf122c75cb36565830cd5f263fb457571bf6f1587eb5f95d095d6165
+  languageName: node
+  linkType: hard
+
+"stimulus-notification@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "stimulus-notification@npm:2.2.0"
+  dependencies:
+    stimulus-use: ^0.51.1
+  peerDependencies:
+    "@hotwired/stimulus": ^3.0.1
+  checksum: 4b7857b3f6d2007b89c084dd29550c9318fd7fed48dafef0e40f82ee50796cc7cea02b503ba65f33fd0eaf87590efbe78b7de86abc722a679ca5a5a3f1fbd2d3
+  languageName: node
+  linkType: hard
+
+"stimulus-use@npm:^0.51.1":
+  version: 0.51.3
+  resolution: "stimulus-use@npm:0.51.3"
+  dependencies:
+    hotkeys-js: ">=3"
+  peerDependencies:
+    "@hotwired/stimulus": ">= 3"
+  checksum: 685f25fae78627f29bba5847626b529344c598d55a935eaf77985d00e5abe9041ba594dcac10c98fc33d12dfd2fc44db420c131463a96ad5a1f447e054b56b09
   languageName: node
   linkType: hard
 
