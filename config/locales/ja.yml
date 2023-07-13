@@ -15,11 +15,18 @@ ja:
         attribute_undefined: "未定義の属性です: %{attribute}"
         not_implemented: "未実装のメソッドです: %{method_name}"
         timeout: "タイムアウトが発生しました"
+        blank: "を入力してください"
+        too_short: "%{count}文字以上で入力してください"
       models:
         user:
           attributes:
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは%{count}文字以上で入力してください"
+            email:
+              blank: "メールアドレスを入力してください"
+              invalid: "メールアドレスが正しくありません"
             name:
               blank: "名前を入力してください"
               too_long: "名前が長すぎます（%{count}文字以内で入力してください）"
-            email:
-              invalid: "メールアドレスが正しくありません"
+              
