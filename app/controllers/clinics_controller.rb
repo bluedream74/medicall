@@ -3,7 +3,7 @@ class ClinicsController < ApplicationController
   before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer, :edit_schedule]
   before_action :check_if_already_registered, only: [:new, :create]
 
-  layout 'admin'
+  layout 'admin', except: [:new]
 
   def new
     @clinic = Clinic.new
