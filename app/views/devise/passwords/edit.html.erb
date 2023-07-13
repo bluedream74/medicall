@@ -2,8 +2,7 @@
   <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">パスワードリセット</h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <div class="max-w-lg border rounded-lg mx-auto">
-    <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="max-w-lg border rounded-lg mx-auto bg-white">
 
     <div class="flex flex-col gap-4 p-4 md:p-8">
       <%= f.hidden_field :reset_password_token, value: params[:reset_password_token] %>

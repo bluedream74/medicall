@@ -16,6 +16,7 @@ class ClinicWizardController < ApplicationController
   
 
   def edit
+    @clinic = Clinic.includes(:schedules).find(params[:id])
   end
 
   def edit_info

@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @clinic = current_user.clinics.first
 
     if @clinic.nil?
-      redirect_to new_clinic_path, notice: 'You must create a clinic first.'
+      redirect_to new_clinic_path, notice: 'まずはクリニックの基本情報を登録してください。'
     else
       render layout: 'admin'
     end
