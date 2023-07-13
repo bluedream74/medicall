@@ -37,3 +37,12 @@ node_modules
 
 # Ignore Gemfile lock.
 Gemfile.lock
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
+# Ignore yarn files
+/yarn-error.log
+.yarn
+!.yarn/release/*
