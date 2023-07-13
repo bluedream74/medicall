@@ -29,7 +29,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["daisyui", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.1.7"],\
-            ["stimulus-use", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.52.0"]\
+            ["flowbite", "npm:1.7.0"],\
+            ["stimulus-use", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.52.0"],\
+            ["tailwindcss", "npm:3.3.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -170,6 +172,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@pkgjs-parseargs-npm-0.11.0-cd2a3fe948-6ad6a00fc4.zip/node_modules/@pkgjs/parseargs/",\
           "packageDependencies": [\
             ["@pkgjs/parseargs", "npm:0.11.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@popperjs/core", [\
+        ["npm:2.11.8", {\
+          "packageLocation": "./.yarn/cache/@popperjs-core-npm-2.11.8-f1692e11a0-e5c69fdebf.zip/node_modules/@popperjs/core/",\
+          "packageDependencies": [\
+            ["@popperjs/core", "npm:2.11.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -705,6 +716,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["flowbite", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/cache/flowbite-npm-1.7.0-82d589156c-3efa24064b.zip/node_modules/flowbite/",\
+          "packageDependencies": [\
+            ["flowbite", "npm:1.7.0"],\
+            ["@popperjs/core", "npm:2.11.8"],\
+            ["mini-svg-data-uri", "npm:1.4.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["foreground-child", [\
         ["npm:3.1.1", {\
           "packageLocation": "./.yarn/cache/foreground-child-npm-3.1.1-77e78ed774-139d270bc8.zip/node_modules/foreground-child/",\
@@ -787,7 +809,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["foreground-child", "npm:3.1.1"],\
             ["jackspeak", "npm:2.2.1"],\
             ["minimatch", "npm:9.0.3"],\
-            ["minipass", "npm:7.0.1"],\
+            ["minipass", "npm:7.0.2"],\
             ["path-scurry", "npm:1.10.1"]\
           ],\
           "linkType": "HARD"\
@@ -1145,6 +1167,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["mini-svg-data-uri", [\
+        ["npm:1.4.4", {\
+          "packageLocation": "./.yarn/cache/mini-svg-data-uri-npm-1.4.4-929f6f1119-997f1fbd8d.zip/node_modules/mini-svg-data-uri/",\
+          "packageDependencies": [\
+            ["mini-svg-data-uri", "npm:1.4.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["minimatch", [\
         ["npm:3.1.2", {\
           "packageLocation": "./.yarn/cache/minimatch-npm-3.1.2-9405269906-c154e56640.zip/node_modules/minimatch/",\
@@ -1179,10 +1210,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:7.0.1", {\
-          "packageLocation": "./.yarn/cache/minipass-npm-7.0.1-097b542d56-fedd1293f6.zip/node_modules/minipass/",\
+        ["npm:7.0.2", {\
+          "packageLocation": "./.yarn/cache/minipass-npm-7.0.2-baa42a5a34-46776de732.zip/node_modules/minipass/",\
           "packageDependencies": [\
-            ["minipass", "npm:7.0.1"]\
+            ["minipass", "npm:7.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1429,7 +1460,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["path-scurry", "npm:1.10.1"],\
             ["lru-cache", "npm:10.0.0"],\
-            ["minipass", "npm:7.0.1"]\
+            ["minipass", "npm:7.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1713,7 +1744,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["root-workspace-0b6124", "workspace:."],\
             ["daisyui", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:3.1.7"],\
-            ["stimulus-use", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.52.0"]\
+            ["flowbite", "npm:1.7.0"],\
+            ["stimulus-use", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:0.52.0"],\
+            ["tailwindcss", "npm:3.3.2"]\
           ],\
           "linkType": "SOFT"\
         }]\

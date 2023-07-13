@@ -15,9 +15,11 @@
 
   <body class="flex flex-col min-h-screen">
     <main class="flex-grow">
+      <%= render "shared/notifications" %>
       <%= render "shared/navbar" %>
       <%= yield %>
     </main>
     <%= render "shared/footer" %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </html>
