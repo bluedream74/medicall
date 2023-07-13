@@ -15,24 +15,11 @@
 
   <body class="flex flex-col min-h-screen">
     <main class="flex-grow">
-
-      <% if flash[:success] %>
-        <%= render "shared/notifications", locals: { message: flash[:success] } %>
-      <% end %>
-
-      <% if flash[:danger] %>
-        <%= render "shared/notifications", locals: { message: flash[:danger] } %>
-      <% end %>
-
-      <% if flash[:warning] %>
-        <%= render "shared/notifications", locals: { message: flash[:warning] } %>
-      <% end %>
-
-
-
+      <%= render "shared/notifications" %>
       <%= render "shared/navbar" %>
       <%= yield %>
     </main>
     <%= render "shared/footer" %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </html>

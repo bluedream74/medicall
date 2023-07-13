@@ -1,17 +1,8 @@
-import { Controller } from "@hotwired/stimulus"
+import { Notification } from 'stimulus-notification'
 
-// Connects to data-controller="notifications"
-export default class extends Controller {
+export default class extends Notification {
   connect() {
-    this.element.style.display = 'none'
-  }
-
-  show(event) {
-    this.element.style.display = 'block'
-    this.element.textContent = event.detail.message
-
-    setTimeout(() => {
-      this.element.style.display = 'none'
-    }, 5000)
+    super.connect()
+    console.log('Do what you want here.')
   }
 }
