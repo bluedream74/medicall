@@ -7,12 +7,6 @@ class UsersController < ApplicationController
       flash[:alert] = "ユーザー登録ができませんでした。"
       render :new
     end
-
-    private
-
-    def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
-    end
   end
 
   def confirm_email
@@ -20,4 +14,10 @@ class UsersController < ApplicationController
       @user.activate
     end
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    end
 end
