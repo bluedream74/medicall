@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   end
 
   
-
   scope '/dashboard' do
     resources :clinics do
       member do
+        get 'edit_schedule', to: 'clinics#edit_schedule', as: 'edit_schedule'
+        patch 'update_schedule', to: 'clinics#update_schedule', as: 'update_schedule'
         get 'add_customer'
         post 'create_customer'
         get 'customer_index'

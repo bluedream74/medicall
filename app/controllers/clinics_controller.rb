@@ -12,6 +12,9 @@ class ClinicsController < ApplicationController
   def edit
   end
 
+  def edit_schedule
+  end
+
 
   def update
     if @clinic.update(clinic_params)
@@ -64,13 +67,6 @@ class ClinicsController < ApplicationController
     @clinic.customers.destroy(@customer)
   
     redirect_to customer_index_clinic_path(@clinic), notice: "削除しました"
-  end
-
-  def edit_schedule
-    (7 - @clinic.schedules.count).times do 
-      @clinic.schedules.build(session: '午前')
-      @clinic.schedules.build(session: '午後')
-    end
   end
 
   private
