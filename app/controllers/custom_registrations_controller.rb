@@ -10,16 +10,16 @@ class CustomRegistrationsController < Devise::RegistrationsController
 
   private
 
-  def set_clinic
-    @clinic = current_user.clinics.first
-  end
-
-  def resolve_layout
-    case action_name
-    when 'edit'
-      'admin'
-    else
-      'application' # デフォルトのレイアウト
+    def set_clinic
+      @clinic = current_user.clinics.first
     end
-  end
+
+    def resolve_layout
+      case action_name
+      when "edit"
+        "admin"
+      else
+        "application" # デフォルトのレイアウト
+      end
+    end
 end

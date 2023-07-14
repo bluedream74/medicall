@@ -11,5 +11,4 @@ class Clinic < ApplicationRecord
   def schedule_info_complete?
     schedules.present?
   end
-  
 end
