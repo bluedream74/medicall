@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "rebornix.ruby", // Ruby
+    "castwide.solargraph", // Ruby Solargraph
+    "groksrc.ruby", // Ruby Language Colorization
+    "aki77.rails-db-schema", // Rails DB Schema
+    "sporto.rails-go-to-spec", // Rails Go To Spec
+    "kaiwood.endwise", // endwise
+    "misogi.ruby-rubocop" // ruby-rubocop
+  ]
+}
