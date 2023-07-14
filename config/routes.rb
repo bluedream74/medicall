@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     member do
       get :edit_info, path: '/edit_info', as: 'edit_info'
       patch :update_info, path: '/update_info', as: 'update_info'
+      get :complete, path: '/complete', as: 'complete'
     end
   end
 

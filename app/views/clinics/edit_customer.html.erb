@@ -4,7 +4,7 @@
   <%= form_with model: [@clinic, @customer], url: update_customer_clinic_path(@clinic, @customer), method: :patch do |f| %>
   
 
-  <div class="max-w-lg border rounded-lg mx-auto bg-white">
+  <div class="max-w-lg border rounded-lg mx-auto">
       <div class="flex flex-col gap-4 p-4 md:p-8">
       <% if @customer.errors.any? %>
         <div id="error_explanation">

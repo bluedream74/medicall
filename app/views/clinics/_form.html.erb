@@ -1,5 +1,4 @@
 <%= turbo_frame_tag 'clinic_wizard' do %>
-  
   <%= form_with(model: @clinic, url: create_clinic_wizard_index_path, local: true, data: { controller: "clinic-form", action: "clinic-form#submit" }) do |f| %>
 
     <div class="max-w-lg border rounded-lg mx-auto bg-white">
