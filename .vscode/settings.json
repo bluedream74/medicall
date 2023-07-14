@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 2,
+  "ruby.useBundler": true,
+  "ruby.intellisense": "rubyLocate",
+  "ruby.format": "rubocop",
+  "ruby.rubocop.onSave": true,
+  "ruby.rubocop.useBundler": true,
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.formatOnSave": true
+  },
+  "extensions.ignoreRecommendations": false
+}
