@@ -1,5 +1,5 @@
 class Clinic < ApplicationRecord
-  has_many :user_clinics
+  has_many :user_clinics, dependent: :destroy
   has_many :users, through: :user_clinics
 
   has_many :clinic_customers, dependent: :destroy
@@ -11,5 +11,4 @@ class Clinic < ApplicationRecord
   def schedule_info_complete?
     schedules.present?
   end
-  
 end

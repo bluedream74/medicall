@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def sample
-    render layout: 'admin'
+    render layout: "admin"
   end
 end

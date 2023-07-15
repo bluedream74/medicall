@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_043518) do
     t.string "phone_number"
     t.string "patient_number"
     t.string "name"
-    t.boolean "is_white_list"
-    t.boolean "is_black_list"
+    t.boolean "is_white_list", default: false, null: false
+    t.boolean "is_black_list", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

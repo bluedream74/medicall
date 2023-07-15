@@ -22,14 +22,16 @@ class ClinicWizardController < ApplicationController
     end
   end
 
+
   def edit
     @clinic = Clinic.includes(:schedules).find(params[:id])
   end
 
+
   def edit_info
     @clinic = Clinic.find(params[:id])
-    render 'clinic_wizard/edit'
-  end 
+    render "clinic_wizard/edit"
+  end
 
   def update_info
     @clinic = Clinic.find(params[:id])
@@ -44,12 +46,11 @@ class ClinicWizardController < ApplicationController
     @clinic = Clinic.find(params[:id])
   end
 
-
   def update
     @clinic = Clinic.find(params[:id])
 
     if @clinic.update(clinic_params)
-      if params[:commit] == '最終確認'
+      if params[:commit] == "最終確認"
         redirect_to complete_clinic_wizard_path
       else
         render :next_step
@@ -61,9 +62,7 @@ class ClinicWizardController < ApplicationController
 
   private
 
-  def clinic_params
-    params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve, schedules_attributes: [:day_of_week, :session, :start_time, :end_time])
-  end
-
-
+    def clinic_params
+      params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve, schedules_attributes: [:day_of_week, :session, :start_time, :end_time])
+    end
 end

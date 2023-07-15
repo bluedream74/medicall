@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root "pages#home"
 
-  get 'sample', to: 'pages#sample'
+  get "sample", to: "pages#sample"
 
   resource :dashboard, only: [:show] do
-    get 'account', on: :member
+    get "account", on: :member
   end
 
-  resources :clinic_wizard, only: [], path: 'clinic_wizard' do
+  resources :clinic_wizard, only: [], path: "clinic_wizard" do
     collection do
-      post :create, path: '/', as: 'create'
+      post :create, path: "/", as: "create"
     end
     member do
       get :edit_info, path: '/edit_info', as: 'edit_info'
@@ -38,6 +38,5 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_up => 'register', :sign_in => 'login', :sign_out => 'logout', :edit => 'account-edit'},
   # controllers: { registrations: 'custom_registrations' }
   controllers: { registrations: 'users/registrations', confirmations: 'users/confirmations' }
-
 
 end

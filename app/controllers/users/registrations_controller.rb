@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
+
   def update
     super do |resource|
       if resource.errors.any?
