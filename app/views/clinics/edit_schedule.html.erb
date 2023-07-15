@@ -1,20 +1,34 @@
-<div class="w-full px-4 md:px-8 mx-auto py-10">
-  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療日</h2>
+<div class="container px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療日編集</h2>
+    <%= form_with(model: @clinic, local: true) do |f| %>
+      <% @clinic.schedules.each_slice(2).with_index do |schedule_pair, index| %>
+        <div class="flex space-x-4 my-4">
+          <%= f.fields_for :schedules, schedule_pair do |schedule_form| %>
+            <div class="bg-white shadow rounded-lg p-4 flex-1">
+              <div class="flex gap-4">
+                <div class="field w-1/4">
+                  <%= schedule_form.select :day_of_week, Schedule.day_of_weeks.keys, { selected: schedule_form.object.day_of_week }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+                </div>
+                <div class="field w-1/4">
+
+                  <%= schedule_form.select :session, Schedule.sessions_i18n.invert, { selected: schedule_form.object.session }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+                </div>
+                <div class="field w-1/4 flex">
+                  <%= schedule_form.time_select :start_time, { default: schedule_form.object.start_time }, { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2 time-select" } %>
+                </div>
+                <div class="field w-1/4 flex">
+                  <%= schedule_form.time_select :end_time, { default: schedule_form.object.end_time }, { class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2 time-select" } %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
 
-<%= form_with(model: @clinic, local: true) do |f| %>
+        <%= f.submit "更新", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
 
-<%= render 'form_schedule', f: f %>
-
-
-
-    
-
-
-      <%= f.submit @clinic.new_record? ? "登録" : "更新", class: "block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
-
-      <%= link_to '戻る', :back %>
-
-<% end %>
+        <%= link_to '戻る', :back %>
+    <% end %>
     </div> 
   </div>

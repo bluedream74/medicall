@@ -3,7 +3,7 @@
 
   <%= form_with(model: @customer, url: create_customer_clinic_path(@clinic), local: true) do |f| %>
 
-  <div class="max-w-lg border rounded-lg mx-auto">
+  <div class="max-w-lg border rounded-lg mx-auto bg-white">
       <div class="flex flex-col gap-4 p-4 md:p-8">
       <% if @customer.errors.any? %>
         <div id="error_explanation">

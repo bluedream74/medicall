@@ -1,10 +1,27 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        current_password: "現在のパスワード"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは%{count}文字以上で入力してください"
+            current_password:
+              invalid: "が間違っています"
   devise:
+    registrations:
+      updated: "アカウント情報を変更しました。"
+      user:
+        updated: "ユーザー情報を変更しました。"
     sessions:
       signed_in: "ログインしました。"
       signed_out: "ログアウトしました。"
     confirmations:
-      confirmed: "あなたのアカウントはすでに認証されています。"
+      confirmed: "アカウントの確認が完了しました。ログインしてください。"
       send_instructions: "あなたのアカウントの認証方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "あなたのアカウントが存在する場合、あなたのアカウントの認証方法を数分以内にメールでご連絡します。"
     failure:
@@ -30,6 +47,11 @@ ja:
       no_token: "このページには、前に送信された電子メールからアクセスしてください。パスワードのリセットメールを複数回送信すると、最後に送信されたメールからのリンクのみが有効となります。"
       send_instructions: "パスワードのリセット方法を数分以内にメールでご連絡します。"
       send_paranoid_instructions: "あなたのアカウントが存在する場合、パスワードのリセット方法を数分以内にメールでご連絡します。"
+      user:
+        updated: "ユーザーのパスワードが正常に更新されました。"
     errors:
       messages:
       taken: "は既に使用されています"
+      invalid: "が間違っています"
+      blank: "を入力してください"
+      too_short: "%{count}文字以上で入力してください"
