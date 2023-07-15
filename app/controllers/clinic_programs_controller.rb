@@ -1,6 +1,8 @@
 class ClinicProgramsController < ApplicationController
   before_action :set_clinic
 
+  layout 'admin'
+
   def new
     @clinic_program = @clinic.clinic_programs.build
   end
@@ -8,7 +10,7 @@ class ClinicProgramsController < ApplicationController
   def create
     @clinic_program = @clinic.clinic_programs.build(clinic_program_params)
     if @clinic_program.save
-      redirect_to account_dashboard_path, notice: 'Schedule was successfully created.'
+      redirect_to account_dashboard_path, notice: '登録しました'
     else
       render :new
     end
@@ -21,15 +23,21 @@ class ClinicProgramsController < ApplicationController
   end
 
   def update
+    @clinic_program = @clinic.clinic_programs.find(params[:id])
+  
+    if @clinic_program.update(clinic_program_params)
+      redirect_to account_dashboard_path, notice: '更新しました'
+    else
+      render :edit
+    end
   end
+  
 
   def destroy
     @clinic_program = @clinic.clinic_programs.find(params[:id])
     @clinic_program.destroy
-    redirect_to account_dashboard_path, notice: 'Schedule was successfully deleted.'
+    redirect_to account_dashboard_path, notice: '削除しました'
   end
-  
-  
   
 
   private
