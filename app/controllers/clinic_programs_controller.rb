@@ -14,6 +14,7 @@ class ClinicProgramsController < ApplicationController
     end
   end
 
+
   def edit
     @clinic = Clinic.find(params[:clinic_id])
     @clinic_program = @clinic.clinic_programs.find(params[:id])
@@ -21,6 +22,14 @@ class ClinicProgramsController < ApplicationController
 
   def update
   end
+
+  def destroy
+    @clinic_program = @clinic.clinic_programs.find(params[:id])
+    @clinic_program.destroy
+    redirect_to account_dashboard_path, notice: 'Schedule was successfully deleted.'
+  end
+  
+  
   
 
   private
