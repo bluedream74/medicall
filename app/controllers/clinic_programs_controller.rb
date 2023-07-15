@@ -15,6 +15,8 @@ class ClinicProgramsController < ApplicationController
   end
 
   def edit
+    @clinic = Clinic.find(params[:clinic_id])
+    @clinic_program = @clinic.clinic_programs.find(params[:id])
   end
 
   def update
