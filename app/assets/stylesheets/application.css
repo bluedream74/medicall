@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ .hidden-checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  .weekday-label {
+    cursor: pointer;
+    background-color: #ffffff; /* 未チェックの時の背景色 */
+    transition: background-color 0.3s; /* 背景色の変更をアニメーション化 */
+  }
+  .weekday-label.checked-label {
+    background-color: #F9CDD4; /* チェックされた時の背景色 */
+  }

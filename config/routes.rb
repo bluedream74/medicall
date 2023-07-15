@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'clinic_programs/index'
+  get 'clinic_programs/new'
+  get 'clinic_programs/create'
+  get 'clinic_programs/edit'
+  get 'clinic_programs/update'
   root 'pages#home'
 
   get 'sample', to: 'pages#sample'
@@ -21,6 +26,7 @@ Rails.application.routes.draw do
   
   scope '/dashboard' do
     resources :clinics do
+      resources :clinic_programs
       member do
         get 'edit_schedule', to: 'clinics#edit_schedule', as: 'edit_schedule'
         patch 'update_schedule', to: 'clinics#update_schedule', as: 'update_schedule'
