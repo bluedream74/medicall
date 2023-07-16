@@ -12,8 +12,10 @@ Rails.application.routes.draw do
       post :create, path: "/", as: "create"
     end
     member do
-      get :edit_info, path: '/edit_info', as: 'edit_info'
+      post :edit_info, path: '/edit_info', as: 'edit_info'
       patch :update_info, path: '/update_info', as: 'update_info'
+      get :step2, path: '/step1', as: 'step1'
+      get :step2, path: '/step2', as: 'step2'
       get :complete, path: '/complete', as: 'complete'
     end
   end

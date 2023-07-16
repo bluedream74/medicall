@@ -1,7 +1,7 @@
 <div class="w-full px-4 md:px-8 mx-auto py-10">
   <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療日編集</h2>
     <div class="max-w-lg border shadow rounded-lg mx-auto bg-white">
-    <%= form_with(model: [@clinic, @clinic_program], local: true) do |form| %>
+    <%= form_with(model: [@clinic, @clinic_program], local: true) do |f| %>
       <div class="flex flex-col gap-4 p-4 md:p-8">
         <div class="flex flex-row gap-4 mx-auto">
           <% ClinicProgram.weekdays.keys.each do |day| %>
@@ -16,7 +16,7 @@
           <!-- 開始時間を9:00から23:59まで15分刻みに設定 -->
           <div class="w-1/2">
             <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">開始時間</label>
-              <%= custom_time_select form, :start_time, 
+              <%= custom_time_select f, :start_time, 
                 default: {hour: '9', minute: '00'}, 
                 interval_minutes: 15, 
                 hours: (7..23),
@@ -26,7 +26,7 @@
           <div class="mt-8">〜</div>
           <div class="w-1/2">
             <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">終了時間</label>
-              <%= custom_time_select form, :end_time, 
+              <%= custom_time_select f, :end_time, 
                 default: {hour: '9', minute: '00'}, 
                 interval_minutes: 15, 
                 hours: (7..23), 
