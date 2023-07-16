@@ -49,3 +49,39 @@
     <%= link_to '1部しかないので、この登録をスキップ', complete_clinic_wizard_path(@clinic), class: 'button' %>
 </div>
 <% end %>
+
+
+<script>
+document.addEventListener('turbo:load', function() {
+  document.querySelectorAll('.weekday-label').forEach(function(label) {
+    var checkbox = document.getElementById(label.getAttribute('for'));
+
+    // ラベルをクリックしたときにチェックボックスの状態を反映
+    label.addEventListener('click', function() {
+      setTimeout(function() { // チェックボックスの状態が更新されるのを待つ
+        if (checkbox.checked) {
+          label.classList.add('checked-label');
+        } else {
+          label.classList.remove('checked-label');
+        }
+      }, 0);
+    });
+  });
+});
+
+function updateLabelClasses() {
+  document.querySelectorAll('.weekday-label').forEach(function(label) {
+    var checkbox = document.getElementById(label.getAttribute('for'));
+
+    if (checkbox.checked) {
+      label.classList.add('checked-label');
+    } else {
+      label.classList.remove('checked-label');
+    }
+  });
+}
+
+document.addEventListener('turbo:load', updateLabelClasses);
+document.addEventListener('turbo:render', updateLabelClasses);
+
+</script>

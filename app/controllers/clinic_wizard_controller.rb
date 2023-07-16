@@ -12,23 +12,37 @@ class ClinicWizardController < ApplicationController
     end
   end
 
+
+  def step1
+    @clinic = Clinic.find(params[:id])
+    @clinic_program = @clinic.clinic_programs.find(params[:id])
+  end
+
+  def step2
+    @clinic = Clinic.find(params[:id])
+    @clinic_program = @clinic.clinic_programs.find(params[:id])
+  end
+
   def edit
-    @clinic = Clinic.includes(:schedules).find(params[:id])
   end
 
 
   def edit_info
-    Rails.logger.info params.inspect
     @clinic = Clinic.find(params[:id])
-    render 'clinic_wizard/edit'
+    @clinic_program = @clinic.clinic_programs.build(clinic_program_params)
+    if @clinic_program.save
+      render 'clinic_wizard/step2', locals: { form: @clinic_program }, notice: "登録が完了しました。"
+    else
+      render :edit
+    end
   end 
 
   def update_info
     @clinic = Clinic.find(params[:id])
     @clinic_program = @clinic.clinic_programs.new(clinic_program_params)
-  
+    
     if @clinic_program.save
-      redirect_to complete_clinic_wizard_path(@clinic), notice: "登録が完了しました。"
+      redirect_to complete_clinic_wizard_path(id: @clinic.id), notice: "登録が完了しました。"
     else
       render :edit
     end
@@ -55,7 +69,11 @@ class ClinicWizardController < ApplicationController
   private
 
   def clinic_params
-    params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve, schedules_attributes: [:day_of_week, :session, :start_time, :end_time])
+    params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve)
+  end
+
+  def clinic_program_params
+    params.require(:clinic_program).permit(:start_time, :end_time, weekdays: [])
   end
 
 
