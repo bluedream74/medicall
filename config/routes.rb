@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   scope '/dashboard' do
     resources :clinics do
+      resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
       member do
         get 'edit_schedule', to: 'clinics#edit_schedule', as: 'edit_schedule'
         patch 'update_schedule', to: 'clinics#update_schedule', as: 'update_schedule'

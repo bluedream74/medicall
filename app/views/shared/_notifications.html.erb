@@ -42,10 +42,16 @@
 <% end %>
 
 <script>
-var toast = document.getElementById('toast');
+document.addEventListener('turbo:load', function() {
+  var toast = document.getElementById('toast');
+  
+  if (toast) {
+    setTimeout(function() {
+      toast.style.display = 'none';
+    }, 3000);
+  }
+});
 
-setTimeout(function() {
-    toast.style.display = 'none';
-}, 3000);
 
 </script>
+

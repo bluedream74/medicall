@@ -8,6 +8,8 @@ class Clinic < ApplicationRecord
   has_many :schedules, dependent: :destroy
   accepts_nested_attributes_for :schedules, allow_destroy: true
 
+  has_many :clinic_programs, dependent: :destroy
+
   def schedule_info_complete?
     schedules.present?
   end

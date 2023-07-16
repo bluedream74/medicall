@@ -21,7 +21,10 @@ class DashboardsController < ApplicationController
     @schedules = Schedule.where(clinic_id: @clinic.id)
     @matrix = schedule_matrix(@schedules)
 
-    render layout: "admin"
+    @clinic_programs = @clinic.clinic_programs
+    
+    render layout: 'admin'
+
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_09_043518) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_15_062435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_043518) do
     t.datetime "updated_at", null: false
     t.index ["clinic_id"], name: "index_clinic_customers_on_clinic_id"
     t.index ["customer_id"], name: "index_clinic_customers_on_customer_id"
+  end
+
+  create_table "clinic_programs", force: :cascade do |t|
+    t.bigint "clinic_id", null: false
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "weekdays", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_clinic_programs_on_clinic_id"
   end
 
   create_table "clinics", force: :cascade do |t|
@@ -84,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_09_043518) do
 
   add_foreign_key "clinic_customers", "clinics"
   add_foreign_key "clinic_customers", "customers"
+  add_foreign_key "clinic_programs", "clinics"
   add_foreign_key "schedules", "clinics"
   add_foreign_key "user_clinics", "clinics"
   add_foreign_key "user_clinics", "users"
