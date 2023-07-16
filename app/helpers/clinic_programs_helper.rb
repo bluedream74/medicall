@@ -15,6 +15,4 @@ module ClinicProgramsHelper
     f.select(field, times, {}, options)
   end
   
-  
-
 end

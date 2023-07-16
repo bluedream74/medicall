@@ -22,6 +22,7 @@ class ClinicProgramsController < ApplicationController
     @clinic_program = @clinic.clinic_programs.find(params[:id])
   end
 
+
   def update
     @clinic_program = @clinic.clinic_programs.find(params[:id])
   
@@ -50,9 +51,5 @@ class ClinicProgramsController < ApplicationController
   def clinic_program_params
     params.require(:clinic_program).permit(:start_time, :end_time, weekdays: [])
   end
-  
-  
-  
-  
   
 end
