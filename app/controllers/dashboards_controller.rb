@@ -18,8 +18,6 @@ class DashboardsController < ApplicationController
     @clinic = current_user.clinics.first
     @user = current_user
     @clinics = @user.clinics
-    @schedules = Schedule.where(clinic_id: @clinic.id)
-    @matrix = schedule_matrix(@schedules)
 
     @clinic_programs = @clinic.clinic_programs
     

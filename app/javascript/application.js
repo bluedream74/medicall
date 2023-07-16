@@ -2,4 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import './custom/weekday.js';
+import './custom/index.js'
