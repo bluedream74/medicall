@@ -1,4 +1,4 @@
-// updateLabelClasses 関数を定義
+// 診療曜日ラベルチェック
 function updateLabelClasses() {
   console.log("updateLabelClasses was called");
   document.querySelectorAll('.weekday-label').forEach(function(label) {
@@ -11,12 +11,10 @@ function updateLabelClasses() {
   });
 }
 
-// DOMContentLoadedイベントのリスナーを設定
 document.addEventListener('DOMContentLoaded', function() {
   updateLabelClasses();
 });
 
-// turbo:load イベントリスナー
 document.addEventListener('turbo:load', function() {
   // ページ遷移後の適切なタイミングでラベルクラスを更新
   setTimeout(function() {
@@ -42,3 +40,5 @@ document.addEventListener('turbo:load', function() {
 document.addEventListener('turbo:render', function() {
   updateLabelClasses();
 });
+
+// 診療曜日ラベルチェック
