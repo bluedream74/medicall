@@ -53,7 +53,8 @@ jobs:
         run: |
           cp -v config/database.yml.ci config/database.yml
           bundle exec rails db:create
-          bundle exec rails db:schema:load
+          bundle exec rails ridgepole:apply
+
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
