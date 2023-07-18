@@ -13,6 +13,8 @@ gem "redis", "~> 4.0"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
+gem "ridgepole"
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
