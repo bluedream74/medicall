@@ -49,8 +49,8 @@ group :development do
   # gem "spring"
 end
 
-gem 'devise'
-gem 'i18n'
-gem 'enum_help'
-gem 'hotwire-rails', '~> 0.1.3'
-gem 'bitmask_attributes', '~> 1.0'
+gem "bitmask_attributes", "~> 1.0"
+gem "devise"
+gem "enum_help"
+gem "hotwire-rails", "~> 0.1.3"
+gem "i18n"

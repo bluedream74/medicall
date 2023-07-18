@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @clinic = current_user.clinics.first
 
     if @clinic.nil?
-      redirect_to new_clinic_path, notice: 'まずはクリニックの基本情報を登録してください。'
+      redirect_to new_clinic_path, notice: "まずはクリニックの基本情報を登録してください。"
     else
       render layout: "admin"
     end
@@ -20,9 +20,8 @@ class DashboardsController < ApplicationController
     @clinics = @user.clinics
 
     @clinic_programs = @clinic.clinic_programs
-    
-    render layout: 'admin'
 
+    render layout: "admin"
   end
 
   private

@@ -2,17 +2,16 @@ class ClinicProgram < ApplicationRecord
   belongs_to :clinic
 
   bitmask :weekdays, as: [:monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
-  
 
   def self.weekdays
     {
-      monday: '月',
-      tuesday: '火',
-      wednesday: '水',
-      thursday: '木',
-      friday: '金',
-      saturday: '土',
-      sunday: '日'
+      monday: "月",
+      tuesday: "火",
+      wednesday: "水",
+      thursday: "木",
+      friday: "金",
+      saturday: "土",
+      sunday: "日",
     }
   end
 
