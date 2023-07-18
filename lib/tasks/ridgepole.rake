@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module RidgepoleTask # rubocop:todo Style/Documentation
+module RidgepoleTask
   extend Rake::DSL
 
   namespace :ridgepole do
@@ -33,11 +33,11 @@ module RidgepoleTask # rubocop:todo Style/Documentation
     def environments
       return "" if ENV["DATABASE_URL"].blank?
 
-      "DATABASE_URL='#{ENV.fetch('DATABASE_URL', nil)}' "
+      "DATABASE_URL='#{ENV.fetch("DATABASE_URL", nil)}' "
     end
 
     def config_file
-      Rails.root.join("config", "database.yml") # rubocop:todo Rails/FilePath
+      Rails.root.join("config", "database.yml")
     end
   end
 end
