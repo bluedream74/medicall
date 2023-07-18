@@ -12,7 +12,6 @@ class ClinicsController < ApplicationController
   def edit
   end
 
-
   def edit_schedule
   end
 
