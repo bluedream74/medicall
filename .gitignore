@@ -46,3 +46,6 @@ Gemfile.lock
 /yarn-error.log
 .yarn
 !.yarn/release/*
+
+# ENV
+.env
