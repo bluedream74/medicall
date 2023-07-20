@@ -10,6 +10,7 @@ gem "sprockets-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "jbuilder"
 gem "redis", "~> 4.0"
+gem "ridgepole"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
