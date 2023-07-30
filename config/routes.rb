@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get "sample", to: "pages#sample"
 
   resource :dashboard, only: [:show] do
     get "account", on: :member
+    get "sample", on: :member
   end
 
   resources :clinic_wizard, only: [], path: "clinic_wizard" do

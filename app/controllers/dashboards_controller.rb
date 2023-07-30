@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_clinic, only: [:account, :show]
+  before_action :set_clinic, only: [:account, :show, :sample]
 
   include SchedulesHelper
 
@@ -21,6 +21,11 @@ class DashboardsController < ApplicationController
 
     @clinic_programs = @clinic.clinic_programs
 
+    render layout: "admin"
+  end
+
+  def sample
+    @clinic = current_user.clinics.first
     render layout: "admin"
   end
 
