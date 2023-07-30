@@ -1,15 +1,21 @@
-class ClinicsController < ApplicationController
-  before_action :authenticate_user!
+class Dashboard::ClinicsController < Dashboard::ApplicationController
   before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer, :edit_schedule]
-  before_action :check_if_already_registered, only: [:new]
-
-  # layout "admin", except: [:new]
 
   def new
-    @clinic = Clinic.new
+    @clinic = current_user.clinics.build
   end
 
   def edit
+  end
+
+  def create
+    @clinic = current_user.clinics.build
+
+    if @clinic.save
+      redirect_to dashboard_clinic_customers_path(current_clinic), notice: "電話帳に登録されました。"
+    else
+      render :new
+    end
   end
 
   def edit_schedule
@@ -29,11 +35,11 @@ class ClinicsController < ApplicationController
       @clinic = Clinic.find(params[:id])
     end
 
-    def check_if_already_registered
-      if current_user.clinics.exists?
-        redirect_to dashboard_account_path, notice: "すでにクリニックを登録されています。"
-      end
-    end
+    # def check_if_already_registered
+    #   if current_user.clinics.exists?
+    #     redirect_to dashboard_account_path, notice: "すでにクリニックを登録されています。"
+    #   end
+    # end
 
     def clinic_params
       params.require(:clinic).permit(:name, :address, :tel, :access, :holiday, :reserve,

@@ -10,28 +10,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+
   </head>
 
-  <body>
-    <main>
-    <%= render "shared/notifications" %>
-    <%= render "shared/admin_navbar" %>
-    <div class="flex overflow-hidden bg-white pt-16">
-      <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
-        <%= render partial: 'shared/admin_sidebar', locals: { clinic: @clinic } %>
-        <div class="flex flex-col min-h-screen">
-          <div class="pt-6 px-4 flex-grow">
-            <%= yield %>
-          </div>
-          <%= render "shared/admin_footer" %>
-        </div>
-      </div>
-    </div>
+  <body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <%= render "shared/notifications" %>
+      <%= render "shared/navbar" %>
+      <%= yield %>
     </main>
+    <%= render "shared/footer" %>
   </body>
-
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
-
 </html>
