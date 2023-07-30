@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   get "sample", to: "pages#sample"
 
-  resource :dashboard, only: [:show] do
-    get "account", on: :member
-  end
+  # resource :dashboard, only: [:show] do
+  #   get "account", on: :member
+  # end
 
   resources :clinic_wizard, only: [], path: "clinic_wizard" do
     collection do
@@ -22,19 +22,27 @@ Rails.application.routes.draw do
     end
   end
 
-  scope "/dashboard" do
-    resources :clinics do
-      resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
-      member do
-        get "edit_schedule", to: "clinics#edit_schedule", as: "edit_schedule"
-        patch "update_schedule", to: "clinics#update_schedule", as: "update_schedule"
-        get "add_customer"
-        post "create_customer"
-        get "customer_index"
-        get "edit_customer/:customer_id", to: "clinics#edit_customer", as: "edit_customer"
-        patch "update_customer/:customer_id", to: "clinics#update_customer", as: "update_customer"
-        delete "destroy_customer/:customer_id", to: "clinics#destroy_customer", as: "destroy_customer"
-      end
+  # scope "/dashboard" do
+  #   resources :clinics do
+  #     resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
+  #     member do
+  #       get "edit_schedule", to: "clinics#edit_schedule", as: "edit_schedule"
+  #       patch "update_schedule", to: "clinics#update_schedule", as: "update_schedule"
+  #       get "add_customer"
+  #       post "create_customer"
+  #       get "customer_index"
+  #       get "edit_customer/:customer_id", to: "clinics#edit_customer", as: "edit_customer"
+  #       patch "update_customer/:customer_id", to: "clinics#update_customer", as: "update_customer"
+  #       delete "destroy_customer/:customer_id", to: "clinics#destroy_customer", as: "destroy_customer"
+  #     end
+  #   end
+  # end
+
+  namespace :dashboard do
+    root to: "welcome#show"
+    resources :clinics
+    namespace :clinic, path: "/clinics/:clinic_id" do
+      resources :customers
     end
   end
 

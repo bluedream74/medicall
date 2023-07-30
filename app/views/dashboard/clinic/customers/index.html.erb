@@ -1,7 +1,7 @@
 <div class="bg-white shadow rounded-lg p-4 sm:p-6">
     <div class="flex items-center justify-between mb-4">
     <h3 class="text-xl leading-none font-bold text-gray-900">電話帳</h3>
-      <%= link_to '新規追加', add_customer_clinic_path(@clinic), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded float-right text-sm" %>
+      <%= link_to '新規追加', new_dashboard_clinic_customer_path(current_clinic), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded float-right text-sm" %>
     </div>
     <div class="block w-full overflow-x-auto">
       <table class="items-center w-full bg-transparent border-collapse">
@@ -35,8 +35,9 @@
                   </td>
                   <td>
 
-                  <%= link_to '編集', edit_customer_clinic_path(@clinic, customer), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded float-right text-sm" %>
 
+
+                  <%= link_to '編集', edit_dashboard_clinic_customer_path(current_clinic, customer), class: "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded float-right text-sm" %>
                   </td>
               </tr>
               <% end %>
