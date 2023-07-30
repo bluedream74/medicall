@@ -40,13 +40,16 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root to: "welcome#show"
-    resources :clinics do
-      get :step1, controller: "clinics/wizard"
-      get :step2
-      get :thanks
-    end
+    resources :clinics
     namespace :clinic, path: "/clinics/:clinic_id" do
+      resource :account, only: :show
       resources :customers
+      resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
+      get :step1, controller: "wizards"
+      post :step1, controller: "wizards", action: "step1_create"
+      get :step2, controller: "wizards"
+      post :step2, controller: "wizards", action: "step2_create"
+      get :complete, controller: "wizards"
     end
   end
 
