@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show] do
     get "account", on: :member
     get "sample", on: :member
+    get "calls", on: :member
+    get "rule", on: :member
+    get "payment", on: :member
+    get "call_show", on: :member
   end
 
   resources :clinic_wizard, only: [], path: "clinic_wizard" do
