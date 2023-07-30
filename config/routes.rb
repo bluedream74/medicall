@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     root to: "welcome#show"
     resources :clinics do
-      get :step1
+      get :step1, controller: "clinics/wizard"
       get :step2
       get :thanks
     end

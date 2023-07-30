@@ -12,10 +12,14 @@ class Dashboard::ClinicsController < Dashboard::ApplicationController
     @clinic = current_user.clinics.build
 
     if @clinic.save
-      redirect_to dashboard_clinic_customers_path(current_clinic), notice: "電話帳に登録されました。"
+      @clinic_program = @clinic.clinic_programs.build
+      render "clinic/wizard/step1", locals: { form: @clinic_program }, notice: "クリニックが作成されました。"
     else
       render :new
     end
+  end
+
+  def step1
   end
 
   def edit_schedule

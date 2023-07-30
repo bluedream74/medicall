@@ -4,7 +4,6 @@
 
     <%= form_with(model: @clinic_program, url: edit_info_clinic_wizard_path(@clinic), local: true, data: { controller: "clinic-form", action: "clinic-form#submit" }) do |f| %>
 
-
       <div class="max-w-lg border shadow rounded-lg mx-auto bg-white">
         <div class="flex flex-col gap-4 p-4 md:p-8">
           <div class="flex flex-row gap-4 mx-auto">
@@ -20,27 +19,27 @@
             <!-- 開始時間を9:00から23:59まで15分刻みに設定 -->
             <div class="w-1/2">
               <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">開始時間</label>
-                <%= custom_time_select f, :start_time, 
-                  default: {hour: '9', minute: '00'}, 
-                  interval_minutes: 15, 
+                <%= custom_time_select f, :start_time,
+                  default: {hour: '9', minute: '00'},
+                  interval_minutes: 15,
                   hours: (7..23),
-                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 %>
             </div>
             <div class="mt-8">〜</div>
             <div class="w-1/2">
               <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">終了時間</label>
-                <%= custom_time_select f, :end_time, 
-                  default: {hour: '9', minute: '00'}, 
-                  interval_minutes: 15, 
-                  hours: (7..23), 
-                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" 
+                <%= custom_time_select f, :end_time,
+                  default: {hour: '9', minute: '00'},
+                  interval_minutes: 15,
+                  hours: (7..23),
+                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 %>
             </div>
           </div>
 
           <hr />
-  
+
           <div class="flex items-center justify-between">
             <%= f.submit '保存して次へ', class: "inline-block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 w-full" %>
           </div>
