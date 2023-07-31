@@ -42,6 +42,10 @@ class DashboardsController < ApplicationController
   def payment
     render layout: "admin"
   end
+
+  def list
+    render layout: "admin"
+  end
   
   private
 

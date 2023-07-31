@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "rule", on: :member
     get "payment", on: :member
     get "call_show", on: :member
+    get "list", on: :member
   end
 
   resources :clinic_wizard, only: [], path: "clinic_wizard" do
