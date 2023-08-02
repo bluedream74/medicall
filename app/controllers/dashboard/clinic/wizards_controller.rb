@@ -19,7 +19,7 @@ class Dashboard::Clinic::WizardsController < Dashboard::Clinic::ApplicationContr
   end
 
   def step2_create
-    @clinic_program = current_clinic.clinic_programs.build
+    @clinic_program = current_clinic.clinic_programs.build(clinic_program_params)
 
     if @clinic_program.save
       render "complete", notice: "登録が完了しました。"
