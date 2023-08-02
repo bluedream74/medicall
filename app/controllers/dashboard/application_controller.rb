@@ -6,10 +6,4 @@ class Dashboard::ApplicationController < ApplicationController
   def current_clinic
     @current_clinic ||= current_user.clinics.first
   end
-
-  private
-
-    def after_sign_in_path_for(resource)
-      dashboard_clinic_path
-    end
 end

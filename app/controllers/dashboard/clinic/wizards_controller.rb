@@ -1,7 +1,6 @@
 class Dashboard::Clinic::WizardsController < Dashboard::Clinic::ApplicationController
   layout "dashboard/application"
   def step1
-    binding.pry
     @clinic_program = current_clinic.clinic_programs.build
   end
 

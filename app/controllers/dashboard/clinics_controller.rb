@@ -1,12 +1,12 @@
 class Dashboard::ClinicsController < Dashboard::ApplicationController
-  before_action :set_clinic, only: [:edit, :update, :add_customer, :create_customer, :customer_index, :edit_customer, :update_customer, :edit_schedule]
-
   layout "dashboard/clinic/application", only: [:show, :edit]
 
   def show
   end
 
   def new
+    return redirect_to dashboard_clinic_path(current_clinic) if current_clinic.present?
+
     @clinic = current_user.clinics.build
   end
 
@@ -19,7 +19,6 @@ class Dashboard::ClinicsController < Dashboard::ApplicationController
     if @clinic.save && (@clinic.users << current_user)
       @clinic_program = @clinic.clinic_programs.build
       redirect_to dashboard_clinic_step1_path(@clinic), notice: "クリニックが作成されました。"
-      # render "wizard/step1", locals: { form: @clinic_program }, notice: "クリニックが作成されました。"
     else
       render :new
     end
