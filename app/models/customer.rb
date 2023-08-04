@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
-  has_many :clinic_customers, dependent: :destroy
-  has_many :clinics, through: :clinic_customers
+  belongs_to :clinic
+  has_many :call_logs, dependent: :destroy
 
   def list_type=(type)
     self.is_white_list = (type == "is_white_list")
