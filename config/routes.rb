@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resource :account, only: :show
       resources :customers
       resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
+      resources :call_logs
       get :step1, controller: "wizards"
       post :step1, controller: "wizards", action: "step1_create"
       get :step2, controller: "wizards"
