@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def sample
-    render layout: "admin"
+  def privacy_policy
   end
 end
