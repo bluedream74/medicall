@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get "sample", to: "pages#sample"
+  get "/privacy-policy", to: "pages#privacy_policy"
 
   namespace :dashboard do
     root to: "welcome#show"

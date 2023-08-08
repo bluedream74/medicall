@@ -6,6 +6,7 @@ body {
 
 /* リキッドレイアウト対応 */
 html {
+  background: #fff;
   font-size: 16px;
 }
 @media (max-width: 375px) {
@@ -2313,6 +2314,7 @@ select::-ms-expand {
   }
 }
 .p-privacy-policy__body ul li {
+  font-weight: 500;
   line-height: 1.75;
   font-size: 14px;
   font-size: 0.875rem;
@@ -2337,10 +2339,11 @@ select::-ms-expand {
   }
 }
 .p-privacy-policy__body ul li ul li {
-  list-style-type: upper-alpha;
+  list-style-type: lower-alpha;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.75;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .p-privacy-policy__body ul li ul li {
@@ -2361,6 +2364,7 @@ select::-ms-expand {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.75;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .p-privacy-policy__body ul li ul li ul li {
@@ -2377,10 +2381,11 @@ select::-ms-expand {
   }
 }
 .p-privacy-policy__body ul li ul li ul li ul li {
-  list-style-type: lower-alpha;
+  list-style-type: lower-greek;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.75;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .p-privacy-policy__body ul li ul li ul li ul li {
@@ -2390,6 +2395,19 @@ select::-ms-expand {
 .p-privacy-policy__unit {
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
+}
+.p-privacy-policy__unit--border {
+  padding-top: 12px;
+  padding-top: 0.75rem;
+  margin-top: 12px;
+  margin-top: 0.75rem;
+  border-top: solid 1px #ededed;
+}
+@media screen and (min-width: 768px) {
+  .p-privacy-policy__unit--border {
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
 }
 .p-privacy-policy__title {
   font-size: 16px;
@@ -2427,6 +2445,7 @@ select::-ms-expand {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.7;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .p-privacy-policy__text {
