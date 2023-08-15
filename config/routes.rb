@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-
   resource :dashboard, only: [:show] do
     get "account", on: :member
     get "sample", on: :member

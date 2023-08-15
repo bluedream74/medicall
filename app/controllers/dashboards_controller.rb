@@ -4,7 +4,6 @@ class DashboardsController < ApplicationController
   before_action :first_clinic
 
   include SchedulesHelper
-  
 
   def show
     if @clinic.nil?
