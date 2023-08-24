@@ -1,0 +1,10 @@
+<%= form_with(model: @item, url: dashboard_clinic_ivr_rule_items_path(current_clinic),class: "bg-white p-4") do |f| %>
+  <%= f.label "ルール名"%>
+  <%= f.text_field :name, class: "bg-gray-200 block" %>
+  <%= f.label "自動応答テキスト"%>
+  <%= f.text_area :body, class: "bg-gray-200 block" %>
+  <% if @item.ancestry.present? %>
+    <%= f.hidden_field :ancestry, class: "bg-gray-200 block" %>
+  <% end %>
+  <%= f.submit "登録" %>
+<% end %>

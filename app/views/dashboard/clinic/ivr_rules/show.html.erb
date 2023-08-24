@@ -1,0 +1,5 @@
+<% if @root %>
+  <%= render partial: 'tree', locals: { parent: @root } %>
+<% else %>
+  <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic)%>
+<% end %>

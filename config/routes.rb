@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     namespace :clinic, path: "/clinics/:clinic_id" do
       resource :account, only: :show
       resources :customers
+      resource :ivr_rule, controller: "ivr_rules"
+      resources :ivr_rule_items, controller: "ivr_rule_items"
       resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
       resources :call_logs
       get :step1, controller: "wizards"
@@ -19,6 +21,11 @@ Rails.application.routes.draw do
       post :step2, controller: "wizards", action: "step2_create"
       get :complete, controller: "wizards"
     end
+  end
+
+  namespace :twilio do
+    post :welcome, controller: "welcome", action: :create
+    resources :ivr_responds, only: :create
   end
 
   devise_for :users, path: "", path_names: { sign_up: "register", sign_in: "login", sign_out: "logout", edit: "account-edit" },

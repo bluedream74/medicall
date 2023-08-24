@@ -57,3 +57,6 @@ gem "enum_help"
 gem "hotwire-rails", "~> 0.1.3"
 gem "i18n"
 gem "inline_svg"
+gem 'twilio-ruby', '~> 6.3.0'
+gem "dotenv-rails"
+gem 'ancestry'

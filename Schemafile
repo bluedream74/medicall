@@ -29,10 +29,31 @@ create_table "clinic_programs", force: :cascade do |t|
   t.index ["clinic_id"], name: "index_clinic_programs_on_clinic_id"
 end
 
+create_table "clinic_ivr_rules", force: :cascade do |t|
+  t.bigint "clinic_id", null: false
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.integer "status"
+  t.index ["clinic_id"]
+end
+
+create_table "clinic_ivr_rule_items", force: :cascade do |t|
+  t.bigint "clinic_id", null: false
+  t.bigint "clinic_ivr_rule_id", null: false
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.string "name"
+  t.text "body"
+  t.string "ancestry", collation: "C"
+  t.index ["ancestry"]
+  t.index ["clinic_id"]
+end
+
 create_table "clinics", force: :cascade do |t|
   t.string "name"
   t.string "address"
   t.string "tel"
+  t.string "twilio_phone_number"
   t.text "access"
   t.string "holiday"
   t.string "reserve"
