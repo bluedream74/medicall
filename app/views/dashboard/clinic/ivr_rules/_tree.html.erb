@@ -1,0 +1,11 @@
+<div>
+  <div class="bg-white p-4 mb-2 border">
+    <%= parent.name %>
+    <% if parent.has_children? %>
+      <% parent.children.each do |child| %>
+        <%= render partial: 'tree', locals: { parent: child } %>
+      <% end %>
+    <% end %>
+    <%= link_to("ルールを追加する", new_dashboard_clinic_ivr_rule_item_path(current_clinic, item_id: parent.id)) %>
+  </div>
+</div>
