@@ -1,15 +1,14 @@
 <header class="l-header">
   <div class="l-header__inner">
     <h1 class="c-header__logo">
-      <a href="#top">
-<picture>
-  <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png.webp') %>" type="image/webp">
-  <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png') %>">
-  <source media="(max-width: 767px)" srcset="<%= asset_path('home/common/logo-sp.png.webp') %>" type="image/webp">
-  <img src="<%= asset_path('home/common/logo-sp.png') %>" alt="medicall" width="266" height="56">
-</picture>
-
-      </a>
+      <%= link_to root_path do %>
+        <picture>
+          <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png.webp') %>" type="image/webp">
+          <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png') %>">
+          <source media="(max-width: 767px)" srcset="<%= asset_path('home/common/logo-sp.png.webp') %>" type="image/webp">
+          <img src="<%= asset_path('home/common/logo-sp.png') %>" alt="medicall" width="266" height="56">
+        </picture>
+      <% end %>
     </h1>
 
     <nav class="c-header__nav">
