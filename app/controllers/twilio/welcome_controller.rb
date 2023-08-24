@@ -1,3 +1,5 @@
+#rubocop:todo all
+
 class Twilio::WelcomeController < Twilio::ApplicationController
   def create
     response = Twilio::TwiML::VoiceResponse.new {|r|
