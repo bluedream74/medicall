@@ -5,14 +5,25 @@ Rails.application.routes.draw do
 
   get "/privacy-policy", to: "pages#privacy_policy"
 
-  namespace :dashboard do
-    root to: "welcome#show"
-    resources :clinics
-    namespace :clinic, path: "/clinics/:clinic_id" do
-      resource :account, only: :show
-      resources :customers
-      resource :ivr_rule, controller: "ivr_rules"
-      resources :ivr_rule_items, controller: "ivr_rule_items"
+  resource :dashboard, only: [:show] do
+    get "account", on: :member
+  end
+
+  resources :clinic_wizard, only: [], path: "clinic_wizard" do
+    collection do
+      post :create, path: "/", as: "create"
+    end
+    member do
+      post :edit_info, path: "/edit_info", as: "edit_info"
+      patch :update_info, path: "/update_info", as: "update_info"
+      get :step2, path: "/step1", as: "step1"
+      get :step2, path: "/step2", as: "step2"
+      get :complete, path: "/complete", as: "complete"
+    end
+  end
+
+  scope "/dashboard" do
+    resources :clinics do
       resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
       resources :call_logs
       get :step1, controller: "wizards"
