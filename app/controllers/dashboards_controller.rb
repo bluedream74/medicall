@@ -45,7 +45,7 @@ class DashboardsController < ApplicationController
   def list
     render layout: "admin"
   end
-  
+
   private
 
     def first_clinic
