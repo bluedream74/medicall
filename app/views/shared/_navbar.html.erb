@@ -1,25 +1,27 @@
-<div class="container mx-auto navbar bg-base-100">
-  <div class="flex-1">
-    <a href="/" class="btn btn-ghost normal-case text-xl">Medicall</a>
+<header class="l-header">
+  <div class="l-header__inner">
+    <h1 class="c-header__logo">
+      <%= link_to root_path do %>
+        <picture>
+          <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png.webp') %>" type="image/webp">
+          <source media="(min-width: 768px)" srcset="<%= asset_path('home/common/logo-pc.png') %>">
+          <source media="(max-width: 767px)" srcset="<%= asset_path('home/common/logo-sp.png.webp') %>" type="image/webp">
+          <img src="<%= asset_path('home/common/logo-sp.png') %>" alt="medicall" width="266" height="56">
+        </picture>
+      <% end %>
+    </h1>
+
+    <nav class="c-header__nav">
+      <ul class="c-header__list">
+        <li class="c-header__item u-desktop"><a href="#resolution">特徴</a></li>
+        <li class="c-header__item u-desktop"><a href="#case">ユースケース</a></li>
+        <li class="c-header__item u-desktop"><a href="#flow">導入フロー</a></li>
+        <% if(!user_signed_in?) %>
+          <li class="c-header__item"><%= link_to "新規登録", new_user_registration_path, class: "c-button__register" %></li>
+          <li class="c-header__item"><%= link_to "ログイン", new_user_session_path, class: "c-button__login" %></li>
+        <% else %>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-    <% if(!user_signed_in?) %>
-      <li><%= link_to "新規登録", new_user_registration_path %></li>
-      <li><%= link_to "ログイン", new_user_session_path %></li>
-    <% else %>
-      <li>
-        <details>
-          <summary>
-            LINK
-          </summary>
-          <ul class="p-2 bg-base-100">
-            <li><a>Link 1</a></li>
-            <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </details>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-</div>
+</header>

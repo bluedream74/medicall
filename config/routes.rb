@@ -3,14 +3,10 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get "/privacy-policy", to: "pages#privacy_policy"
+
   resource :dashboard, only: [:show] do
     get "account", on: :member
-    get "sample", on: :member
-    get "calls", on: :member
-    get "rule", on: :member
-    get "payment", on: :member
-    get "call_show", on: :member
-    get "list", on: :member
   end
 
   resources :clinic_wizard, only: [], path: "clinic_wizard" do
@@ -29,17 +25,18 @@ Rails.application.routes.draw do
   scope "/dashboard" do
     resources :clinics do
       resources :clinic_programs, only: [:new, :create, :edit, :update, :destroy]
-      member do
-        get "edit_schedule", to: "clinics#edit_schedule", as: "edit_schedule"
-        patch "update_schedule", to: "clinics#update_schedule", as: "update_schedule"
-        get "add_customer"
-        post "create_customer"
-        get "customer_index"
-        get "edit_customer/:customer_id", to: "clinics#edit_customer", as: "edit_customer"
-        patch "update_customer/:customer_id", to: "clinics#update_customer", as: "update_customer"
-        delete "destroy_customer/:customer_id", to: "clinics#destroy_customer", as: "destroy_customer"
-      end
+      resources :call_logs
+      get :step1, controller: "wizards"
+      post :step1, controller: "wizards", action: "step1_create"
+      get :step2, controller: "wizards"
+      post :step2, controller: "wizards", action: "step2_create"
+      get :complete, controller: "wizards"
     end
+  end
+
+  namespace :twilio do
+    post :welcome, controller: "welcome", action: :create
+    resources :ivr_responds, only: :create
   end
 
   devise_for :users, path: "", path_names: { sign_up: "register", sign_in: "login", sign_out: "logout", edit: "account-edit" },

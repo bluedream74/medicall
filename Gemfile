@@ -51,8 +51,12 @@ group :development do
   # gem "spring"
 end
 
+gem "ancestry"
 gem "bitmask_attributes", "~> 1.0"
 gem "devise"
+gem "dotenv-rails"
 gem "enum_help"
 gem "hotwire-rails", "~> 0.1.3"
 gem "i18n"
+gem "inline_svg"
+gem "twilio-ruby", "~> 6.3.0"

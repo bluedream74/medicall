@@ -1,0 +1,87 @@
+<%= turbo_frame_tag 'clinic_wizard' do %>
+<div class="container px-4 md:px-8 mx-auto py-10">
+  <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-8">診療日登録 1部（午前）</h2>
+
+    <%= form_with(model: @clinic_program, url: dashboard_clinic_step1_path(current_clinic), local: true, data: { controller: "clinic-form", action: "clinic-form#submit" }) do |f| %>
+
+      <div class="max-w-lg border shadow rounded-lg mx-auto bg-white">
+        <div class="flex flex-col gap-4 p-4 md:p-8">
+          <div class="flex flex-row gap-4 mx-auto">
+            <% ClinicProgram.weekdays.keys.each do |day| %>
+              <div>
+                <%= check_box_tag 'clinic_program[weekdays][]', day, @clinic_program.weekdays.include?(day.to_s), class: 'hidden-checkbox', id: "clinic_program_weekdays_#{day}" %>
+                <%= label_tag "clinic_program_weekdays_#{day}", ClinicProgram.weekdays[day], class: 'weekday-label text-xs font-normal inline-block py-3 px-3 rounded shadow last:mr-0 mb-1 border' %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="flex gap-4">
+            <!-- 開始時間を9:00から23:59まで15分刻みに設定 -->
+            <div class="w-1/2">
+              <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">開始時間</label>
+                <%= custom_time_select f, :start_time,
+                  default: {hour: '9', minute: '00'},
+                  interval_minutes: 15,
+                  hours: (7..23),
+                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                %>
+            </div>
+            <div class="mt-8">〜</div>
+            <div class="w-1/2">
+              <label for="countries_multiple" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">終了時間</label>
+                <%= custom_time_select f, :end_time,
+                  default: {hour: '9', minute: '00'},
+                  interval_minutes: 15,
+                  hours: (7..23),
+                  class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                %>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="flex items-center justify-between">
+            <%= f.submit '保存して次へ', class: "inline-block bg-gray-800 hover:bg-gray-700 active:bg-gray-600 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 w-full" %>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+</div>
+<% end %>
+
+
+<script>
+document.addEventListener('turbo:load', function() {
+  document.querySelectorAll('.weekday-label').forEach(function(label) {
+    var checkbox = document.getElementById(label.getAttribute('for'));
+
+    // ラベルをクリックしたときにチェックボックスの状態を反映
+    label.addEventListener('click', function() {
+      setTimeout(function() { // チェックボックスの状態が更新されるのを待つ
+        if (checkbox.checked) {
+          label.classList.add('checked-label');
+        } else {
+          label.classList.remove('checked-label');
+        }
+      }, 0);
+    });
+  });
+});
+
+function updateLabelClasses() {
+  document.querySelectorAll('.weekday-label').forEach(function(label) {
+    var checkbox = document.getElementById(label.getAttribute('for'));
+
+    if (checkbox.checked) {
+      label.classList.add('checked-label');
+    } else {
+      label.classList.remove('checked-label');
+    }
+  });
+}
+
+document.addEventListener('turbo:load', updateLabelClasses);
+document.addEventListener('turbo:render', updateLabelClasses);
+
+</script>

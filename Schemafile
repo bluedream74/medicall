@@ -1,5 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+create_table "call_logs", force: :cascade do |t|
+  t.bigint "clinic_id", null: false
+  t.bigint "customer_id"
+  t.string "phone_number"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.index ["clinic_id"], name: "index_call_logs_on_clinic_id"
+  t.index ["customer_id"], name: "index_call_logs_on_customer_id"
+end
 
 create_table "clinic_customers", force: :cascade do |t|
   t.bigint "clinic_id", null: false
@@ -20,10 +29,31 @@ create_table "clinic_programs", force: :cascade do |t|
   t.index ["clinic_id"], name: "index_clinic_programs_on_clinic_id"
 end
 
+create_table "clinic_ivr_rules", force: :cascade do |t|
+  t.bigint "clinic_id", null: false
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.integer "status"
+  t.index ["clinic_id"]
+end
+
+create_table "clinic_ivr_rule_items", force: :cascade do |t|
+  t.bigint "clinic_id", null: false
+  t.bigint "clinic_ivr_rule_id", null: false
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.string "name"
+  t.text "body"
+  t.string "ancestry", collation: "C"
+  t.index ["ancestry"]
+  t.index ["clinic_id"]
+end
+
 create_table "clinics", force: :cascade do |t|
   t.string "name"
   t.string "address"
   t.string "tel"
+  t.string "twilio_phone_number"
   t.text "access"
   t.string "holiday"
   t.string "reserve"
@@ -39,6 +69,8 @@ create_table "customers", force: :cascade do |t|
   t.boolean "is_black_list", default: false, null: false
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false
+  t.bigint "clinic_id", null: false
+  t.index ["clinic_id"], name: "index_customers_on_clinic_id"
 end
 
 create_table "schedules", force: :cascade do |t|
@@ -79,9 +111,9 @@ create_table "users", force: :cascade do |t|
   t.index ["unconfirmed_email"], name: "index_users_on_unconfirmed_email"
 end
 
-add_foreign_key "clinic_customers", "clinics"
-add_foreign_key "clinic_customers", "customers"
-add_foreign_key "clinic_programs", "clinics"
-add_foreign_key "schedules", "clinics"
-add_foreign_key "user_clinics", "clinics"
-add_foreign_key "user_clinics", "users"
+add_foreign_key "clinic_customers", "clinics", name: "fk_rails_2375b2eb86"
+add_foreign_key "clinic_customers", "customers", name: "fk_rails_54de4e8b1c"
+add_foreign_key "clinic_programs", "clinics", name: "fk_rails_2165016903"
+add_foreign_key "schedules", "clinics", name: "fk_rails_9a4c321812"
+add_foreign_key "user_clinics", "clinics", name: "fk_rails_68a9528fd8"
+add_foreign_key "user_clinics", "users", name: "fk_rails_555e8cc408"
