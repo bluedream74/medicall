@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
-  root "pages#home"
+  # root "pages#home"
+
+  root "pages#landing"
 
   get "/privacy-policy", to: "pages#privacy_policy"
 
