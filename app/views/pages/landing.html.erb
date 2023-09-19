@@ -1,0 +1,428 @@
+
+	<!--Hero-->
+	<div class="pt-24">
+
+		<div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mx-auto place-self-center sm:col-span-6">
+            <div class="flex flex-col w-full justify-center items-start text-center md:text-left">
+				<p class="uppercase tracking-loose w-full text-2xl md:text-3xl"><span class="font-bold text-5xl">クリニック</span>の電話業務の負担を軽減</p>
+				<h1 class="my-4 text-6xl md:text-7xl font-bold leading-tight">電話対応を自動化</h1>
+				<p class="leading-normal text-2xl mb-8">先行登録受付中！2023年10月β版スタート！</p>
+
+
+
+				<button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg">まずは先行登録</button>
+
+				</div>
+    	</div>
+			
+        <div class="mx-auto lg:mt-0 sm:col-span-6 lg:flex">
+				<figure class="p-mainview__tel_2">
+						<%= image_tag "home/mainview/ipadair4.png", alt: 'クリニックでの電話業務の自動化', class: 'w-full h-auto mt-10' %>
+			</figure>             
+        </div>   
+    </div>
+	</div>
+
+
+	<div class="relative -mt-12 lg:-mt-24">
+		<svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				<g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+					<path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+					<path d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z" opacity="0.100000001"></path>
+					<path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+				</g>
+				<g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+					<path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
+				</g>
+			</g>
+		</svg>
+	</div>
+
+	<!-- お悩み3つ -->
+	<section class="bg-white py-8">
+		<div class="container mx-auto flex flex-wrap pt-4 pb-12">
+
+			<h1 class="w-full mb-2 mt-20 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">こんなお悩みありませんか？</h1>
+			<div class="w-full mb-20">
+				<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+				<picture>
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content01-pc.png.webp') %>" type="image/webp">
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content01-pc.png') %>">
+					<source media="(max-width: 767px)" srcset="<%= asset_path('home/appeal/content01-sp.png.webp') %>" type="image/webp">
+					<img src="<%= asset_path('home/appeal/content01-sp.png') %>" alt="電話対応に時間を取られて来客対応がしんどい" width="684" height="270" loading="lazy">
+				</picture>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+				<picture>
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content02-pc.png.webp') %>" type="image/webp">
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content02-pc.png') %>">
+					<source media="(max-width: 767px)" srcset="<%= asset_path('home/appeal/content02-sp.png.webp') %>" type="image/webp">
+					<img src="<%= asset_path('home/appeal/content02-sp.png') %>" alt="外国人から電話が来たときに対応出来る人がいない" width="686" height="276" loading="lazy">
+				</picture>
+			</div>
+
+			<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+				<picture>
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content03-pc.png.webp') %>" type="image/webp">
+					<source media="(min-width: 768px)" srcset="<%= asset_path('home/appeal/content03-pc.png') %>">
+					<source media="(max-width: 767px)" srcset="<%= asset_path('home/appeal/content03-sp.png.webp') %>" type="image/webp">
+					<img src="<%= asset_path('home/appeal/content03-sp.png') %>" alt="業務過多による人員増加で人件費が増える一方" width="684" height="274" loading="lazy">
+				</picture>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- ユースケース -->
+	<section class="bg-white py-8">
+		<div class="container max-w-5xl mx-auto m-8">
+			<h1 class="w-full mb-2 mt-10 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">ユースケース</h1>
+			<div class="w-full mb-20">
+				<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			</div>
+
+			<div class="flex flex-wrap">
+				<div class="w-5/6 sm:w-1/2 p-6">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-12">電話業務軽減・患者ストレス軽減</h3>
+						<p class="text-gray-600 mb-8">お電話の予約や問い合わせをスムーズに処理します。</p>
+						<p class="text-gray-600 mb-8">自動音声案内により待ち時間を短縮し、患者様のストレスを軽減します。</p>
+						<p class="text-gray-600 mb-8">必要な情報を簡単に入力するだけで、迅速な対応を受けられます。24時間対応で、いつでも利用できます。</p>
+				</div>
+				<div class="w-full sm:w-1/2 p-6">
+					<picture>
+						<source srcset="<%= asset_path('home/case/content01.png.webp') %>" type="image/webp">
+						<img src="<%= asset_path('home/case/content01.png') %>" alt="" width="640" height="516" loading="lazy">
+					</picture>
+				</div>
+			</div>
+
+
+			<div class="flex flex-wrap flex-col-reverse sm:flex-row">
+				<div class="w-full sm:w-1/2 p-6 mt-6">
+					<div class="align-middle">
+						<h3 class="text-3xl text-gray-800 font-bold leading-none mb-12">外国人への問い合わせ対応</h3>
+							<p class="text-gray-600 mb-8">外国在住者や旅行者の方々にも便利な自動応答サービスです。英語を含む複数の言語で対応します。</p>
+							<p class="text-gray-600 mb-8">自動音声案内や翻訳サービスで言語の壁をなくし、迅速で正確な情報提供を行います。</p>
+							<p class="text-gray-600 mb-8">お気軽にご利用ください。</p>
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 p-6 mt-6">
+					<picture>
+						<source srcset="<%= asset_path('home/case/content02.png.webp') %>" type="image/webp">
+						<img src="<%= asset_path('home/case/content02.png') %>" alt="" width="640" height="516" loading="lazy">
+					</picture>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 機能一覧 -->
+	<section  class="px-3 md:lg:xl:px-40  py-20 bg-opacity-10" style="background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png') ;">
+		<h1 class="w-full mb-2 mt-10 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">機能一覧</h1>
+		<div class="w-full mb-20">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+		<div class="grid grid-cols-1 md:lg:xl:grid-cols-3 group bg-white shadow-xl shadow-neutral-100 border ">
+
+
+				<div
+						class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-red-500 text-white shadow-lg shadow-red-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path stroke-linecap="round" stroke-linejoin="round"
+												d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">新規電話番号の取得</p>
+						<p class="mt-2 text-sm text-slate-500">お申し込み後050番号を付与いたします。</p>
+				</div>
+
+				<div
+						class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-orange-500 text-white shadow-lg shadow-orange-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+										<polyline points="14 2 14 8 20 8"></polyline>
+										<line x1="16" y1="13" x2="8" y2="13"></line>
+										<line x1="16" y1="17" x2="8" y2="17"></line>
+										<polyline points="10 9 9 9 8 9"></polyline>
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">着信フローの作成</p>
+						<p class="mt-2 text-sm text-slate-500">クリニック毎に自由に設定いただけます。</p>
+				</div>
+
+				<div class="p-10 flex flex-col items-center text-center group   md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-yellow-500 text-white shadow-lg shadow-yellow-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path stroke-linecap="round" stroke-linejoin="round"
+												d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">SMS自動返信</p>
+						<p class="mt-2 text-sm text-slate-500">web予約への誘導など、電話対応の必要のないものは自動でテキストメッセージを送信できます。</p>
+				</div>
+
+
+				<div class="p-10 flex flex-col items-center text-center group   md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-lime-500 text-white shadow-lg shadow-lime-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">電話転送</p>
+						<p class="mt-2 text-sm text-slate-500">詳細な説明が必要な問い合わせは、直接電話で対応</p>
+				</div>
+
+				<div class="p-10 flex flex-col items-center text-center group    md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-teal-500 text-white shadow-lg shadow-teal-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path stroke-linecap="round" stroke-linejoin="round"
+												d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">ブラックリスト</p>
+						<p class="mt-2 text-sm text-slate-500">面倒な営業電話はブラックリスト登録しておけば転送されません。</p>
+				</div>
+
+				<div class="p-10 flex flex-col items-center text-center group     hover:bg-slate-50 cursor-pointer">
+						<span class="p-5 rounded-full bg-indigo-500 text-white shadow-lg shadow-indigo-200"><svg
+										xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+										stroke="currentColor" stroke-width="1.5">
+										<path stroke-linecap="round" stroke-linejoin="round"
+												d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+								</svg></span>
+						<p class="text-xl font-medium text-slate-700 mt-3">ホワイトリスト</p>
+						<p class="mt-2 text-sm text-slate-500">お年寄りなど、電話での予約が必要な方はホワイトリスト登録しておけば転送されます。
+						</p>
+				</div>
+		</div>
+	</section>
+
+
+	<!-- FAQ -->
+	<section class="py-8">
+		<div class="container max-w-5xl mx-auto m-8">
+			<div class="bg-white p-4 rounded-lg shadow-xl py-8 mt-12">
+					<h4 class="text-4xl font-bold text-gray-800 tracking-widest uppercase text-center">FAQ</h4>
+					<p class="text-center text-4xl md:text-5xl text-gray-600 text-md mt-2">よくあるご質問</p>
+					<div class="space-y-12 px-2 xl:px-16 mt-12">
+							<div class="mt-4 flex">
+									<div>
+											<div class="flex items-center h-16 border-l-4 border-blue-600">
+													<span class="text-4xl text-blue-600 px-4">Q.</span>
+											</div>
+											<div class="flex items-center h-16 border-l-4 border-gray-400">
+													<span class="text-4xl text-gray-400 px-4">A.</span>
+											</div>
+									</div>
+									<div>
+											<div class="flex items-center h-16">
+													<span class="text-lg text-blue-600 font-bold">既存電話番号で利用できますか？</span>
+											</div>
+											<div class="flex items-center py-2">
+													<span class="text-gray-500">可能です。その場合の転送料金に関しましてはお客様負担となります。</span>
+											</div>
+									</div>
+							</div>
+
+							<div class="mt-4 flex">
+									<div>
+											<div class="flex items-center h-16 border-l-4 border-blue-600">
+													<span class="text-4xl text-blue-600 px-4">Q.</span>
+											</div>
+											<div class="flex items-center h-16 border-l-4 border-gray-400">
+													<span class="text-4xl text-gray-400 px-4">A.</span>
+											</div>
+									</div>
+									<div>
+											<div class="flex items-center h-16">
+													<span class="text-lg text-blue-600 font-bold">料金は従量課金ですか？</span>
+											</div>
+											<div class="flex items-center py-2">
+													<span class="text-gray-500">電話番号維持費用や、着信、転送費用なども込みとなっております。</span>
+											</div>
+									</div>
+							</div>
+
+							<div class="mt-4 flex">
+									<div>
+											<div class="flex items-center h-16 border-l-4 border-blue-600">
+													<span class="text-4xl text-blue-600 px-4">Q.</span>
+											</div>
+											<div class="flex items-center h-16 border-l-4 border-gray-400">
+													<span class="text-4xl text-gray-400 px-4">A.</span>
+											</div>
+									</div>
+									<div>
+											<div class="flex items-center h-16">
+													<span class="text-lg text-blue-600 font-bold">料金の発生のタイミングはいつからですか？</span>
+											</div>
+											<div class="flex items-center py-2">
+													<span class="text-gray-500">クリニック情報や受信ルール設定などが完了して使用できる状態からになります。登録の段階では発生いたしません。ご安心ください。</span>
+
+											</div>
+									</div>
+							</div>
+
+							<div class="mt-4 flex">
+									<div>
+											<div class="flex items-center h-16 border-l-4 border-blue-600">
+													<span class="text-4xl text-blue-600 px-4">Q.</span>
+											</div>
+											<div class="flex items-center h-16 border-l-4 border-gray-400">
+													<span class="text-4xl text-gray-400 px-4">A.</span>
+											</div>
+									</div>
+									<div>
+											<div class="flex items-center h-16">
+													<span class="text-lg text-blue-600 font-bold">支払い方法を教えてください。</span>
+											</div>
+											<div class="flex items-center py-2">
+													<span class="text-gray-500">クレジットカード（カード会社：JCB/マスターカード/VISA/AMEX）決済をお願いしております。</span>
+											</div>
+									</div>
+							</div>
+
+							<div class="mt-4 flex">
+									<div>
+											<div class="flex items-center h-16 border-l-4 border-blue-600">
+													<span class="text-4xl text-blue-600 px-4">Q.</span>
+											</div>
+											<div class="flex items-center h-16 border-l-4 border-gray-400">
+													<span class="text-4xl text-gray-400 px-4">A.</span>
+											</div>
+									</div>
+									<div>
+											<div class="flex items-center h-16">
+													<span class="text-lg text-blue-600 font-bold">電話予約機能はありますか？</span>
+											</div>
+											<div class="flex items-center py-2">
+													<span class="text-gray-500">現在実装計画中です。順次公開してまいります。</span>
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 料金 -->
+	<section class="bg-gray-100 py-8">
+		<div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+
+			<h1 class="w-full my-2 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">Pricing</h1>
+			<div class="w-full mb-4">
+				<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			</div>
+
+
+
+			<div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+
+			<div class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+					<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+						<div class="w-full p-8 text-3xl font-bold text-center">ベーシック</div>
+						<div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+						<ul class="w-full text-center text-base font-bold">
+							<li class="border-b py-4">050専用番号</li>
+							<li class="border-b py-4">自動音声案内</li>
+							<li class="border-b py-4">電話転送</li>
+							<li class="border-b py-4">診療時間登録</li>
+							<li class="border-b py-4">SMS自動返信</li>
+							<li class="border-b py-4">ホワイトリスト</li>
+							<li class="border-b py-4">ブラックリスト</li>
+						</ul>
+					</div>
+					<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 14,800 <span class="text-base">/ 月</span></div>
+					</div>
+				</div>
+
+				<div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+					<div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+						<div class="p-8 text-3xl font-bold text-center border-b-4">2回線目</div>
+						<ul class="w-full text-center text-sm">
+							<li class="border-b py-4">050専用番号</li>
+							<li class="border-b py-4">外国語音声案内</li>
+							<li class="border-b py-4">電話転送</li>
+							<li class="border-b py-4">診療時間登録</li>
+							<li class="border-b py-4">SMS自動返信</li>
+							<li class="border-b py-4">ホワイトリスト</li>
+							<li class="border-b py-4">ブラックリスト</li>
+						</ul>
+					</div>
+					<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 9,800 <span class="text-base">/ 月</span></div>
+					</div>
+				</div>
+
+
+				<div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+					<div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+						<div class="p-8 text-3xl font-bold text-center border-b-4">エンタープライズ</div>
+						<ul class="w-full text-center text-sm">
+							<li class="border-b py-4">050専用番号</li>
+							<li class="border-b py-4">自動音声案内</li>
+							<li class="border-b py-4">電話転送</li>
+							<li class="border-b py-4">診療時間登録</li>
+							<li class="border-b py-4">SMS自動返信</li>
+							<li class="border-b py-4">ホワイトリスト</li>
+							<li class="border-b py-4">ブラックリスト</li>
+							<li class="border-b py-4">電話予約機能</li>
+							<li class="border-b py-4">メモ機能</li>
+							<li class="border-b py-4">文字起こし</li>
+							<li class="border-b py-4">音声録音</li>
+						</ul>
+					</div>
+					<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+						<div class="w-full pt-6 text-4xl font-bold text-center">未定 <span class="text-base">/ 月</span></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</section>
+
+
+	<!-- Change the colour #f8fafc to match the previous section colour -->
+	<svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+				<g class="wave" fill="#f8fafc">
+					<path d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"></path>
+				</g>
+				<g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+					<g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+						<path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+						<path d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z" opacity="0.100000001"></path>
+						<path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+					</g>
+				</g>
+			</g>
+		</g>
+	</svg>
+
+	<section class="container mx-auto text-center py-6 mb-12">
+
+		<h1 class="w-full my-2 text-4xl md:text-5xl font-bold leading-tight text-center text-white">ご利用までの流れ</h1>
+		<div class="w-full mb-4">
+			<div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+
+		<h3 class="my-4 text-3xl leading-tight">まずは先行登録！</h3>
+
+		<a href="https://form.medicall.jp/">
+			<button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg">今すぐ登録！</button>
+		</a>
+
+	</section>
