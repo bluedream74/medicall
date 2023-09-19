@@ -6,12 +6,12 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}',
     './node_modules/flowbite/**/*.js'
   ],
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-    require('daisyui'),
-    require('flowbite/plugin'),
-  ]
+  // plugins: [
+  //   require('@tailwindcss/forms'),
+  //   require('@tailwindcss/aspect-ratio'),
+  //   require('@tailwindcss/typography'),
+  //   require('@tailwindcss/container-queries'),
+  //   require('daisyui'),
+  //   require('flowbite/plugin'),
+  // ]
 }
