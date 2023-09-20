@@ -7,15 +7,9 @@ class Dashboard::WelcomeController < Dashboard::ApplicationController
     redirect_to dashboard_clinic_path(current_clinic)
   end
 
-  # とりあえず静的なページとして作成しておく
-
-  #リスト設定
   def list
   end
 
-  #支払い設定
   def payment
   end
-
-
 end
