@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-
-  # root "pages#home"
 
   root "pages#landing"
 
@@ -12,6 +9,8 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root to: "welcome#show"
+    get "/list", to: "welcome#list"
+    get "/payment", to: "welcome#payment"
     resources :clinics
     namespace :clinic, path: "/clinics/:clinic_id" do
       resource :account, only: :show
