@@ -78,6 +78,31 @@
 		</div>
 	</section>
 
+	<!-- 想い -->
+	<section class="bg-white py-8">
+		<div class="container max-w-5xl mx-auto m-8">
+			<h1 class="w-full mb-2 mt-10 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">About</h1>
+			<div class="w-full mb-20">
+				<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+			</div>
+
+			<div class="flex flex-wrap">
+				<div class="w-full sm:w-1/2 p-6">
+					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-12">メディコルで業務改善したい！</h3>
+						<p class="text-gray-600 mb-8">私は長年の医療事務の経験を活かし、クリニックの皆様が抱える電話受付業務の課題を解決するための、この度、電話自動応答サービス「メディコル」を立ち上げました。</p>
+						<p class="text-gray-600 mb-8">「メディコル」は、逼迫する電話受付業務を効率化し、クリニックの運営をサポートするためのサービスです。特に外国人観光客からの問い合わせにも対応可能となっております。</p>
+						
+				</div>
+				<div class="w-full sm:w-1/2 p-6 mx-auto">
+					<picture>
+						<img src="<%= asset_path('home/case/img_2518.jpg') %>" alt="", class="w-full sm:w-9/12">
+					</picture>
+				</div>
+			</div>
+	</section>
+
+	
+
 
 	<!-- ユースケース -->
 	<section class="bg-white py-8">
@@ -88,7 +113,7 @@
 			</div>
 
 			<div class="flex flex-wrap">
-				<div class="w-5/6 sm:w-1/2 p-6">
+				<div class="w-full sm:w-1/2 p-6">
 					<h3 class="text-3xl text-gray-800 font-bold leading-none mb-12">電話業務軽減・患者ストレス軽減</h3>
 						<p class="text-gray-600 mb-8">お電話の予約や問い合わせをスムーズに処理します。</p>
 						<p class="text-gray-600 mb-8">自動音声案内により待ち時間を短縮し、患者様のストレスを軽減します。</p>
@@ -105,18 +130,18 @@
 
 			<div class="flex flex-wrap flex-col-reverse sm:flex-row">
 				<div class="w-full sm:w-1/2 p-6 mt-6">
+					<picture>
+						<source srcset="<%= asset_path('home/case/content02.png.webp') %>" type="image/webp">
+						<img src="<%= asset_path('home/case/content02.png') %>" alt="" width="640" height="516" loading="lazy">
+					</picture>
+				</div>
+				<div class="w-full sm:w-1/2 p-6 mt-6">
 					<div class="align-middle">
 						<h3 class="text-3xl text-gray-800 font-bold leading-none mb-12">外国人への問い合わせ対応</h3>
 							<p class="text-gray-600 mb-8">外国在住者や旅行者の方々にも便利な自動応答サービスです。英語を含む複数の言語で対応します。</p>
 							<p class="text-gray-600 mb-8">自動音声案内や翻訳サービスで言語の壁をなくし、迅速で正確な情報提供を行います。</p>
 							<p class="text-gray-600 mb-8">お気軽にご利用ください。</p>
 					</div>
-				</div>
-				<div class="w-full sm:w-1/2 p-6 mt-6">
-					<picture>
-						<source srcset="<%= asset_path('home/case/content02.png.webp') %>" type="image/webp">
-						<img src="<%= asset_path('home/case/content02.png') %>" alt="" width="640" height="516" loading="lazy">
-					</picture>
 				</div>
 			</div>
 		</div>
@@ -204,6 +229,82 @@
 				</div>
 		</div>
 	</section>
+
+	<!-- 比較表 -->
+<section class="bg-white px-3 md:lg:xl:px-40 py-20">
+	<h1 class="w-full mb-2 mt-10 text-4xl md:text-5xl font-bold leading-tight text-center text-gray-800">他社比較</h1>
+		<div class="w-full mb-20">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+	<div class="container mx-auto">
+		<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+			<div class="w-full overflow-x-auto">
+				<table class="w-full">
+					<thead>
+						<tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+							<th class="px-4 py-3">&nbsp;</th>
+							<th class="px-4 py-3">A社</th>
+							<th class="px-4 py-3">B社</th>
+							<th class="px-4 py-3 text-sky-600">当社Medicall</th>
+						</tr>
+					</thead>
+					<tbody class="bg-white">
+						<tr class="text-gray-700">
+							<td class="px-4 py-3 border">
+								<div class="flex items-center text-sm">
+									<div>
+										<p class="font-semibold text-black">初期費用</p>
+										<p class="text-xs text-gray-600">Developer</p>
+									</div>
+								</div>
+							</td>
+							<td class="px-4 py-3 text-ms font-semibold border">無料</td>
+							<td class="px-4 py-3 text-ms font-semibold border">55,000円</td>
+							<td class="px-4 py-3 text-ms font-semibold border text-sky-600">無料</td>
+						</tr>
+						<tr class="text-gray-700">
+							<td class="px-4 py-3 border">
+								<div class="flex items-center text-sm">
+									<div>
+										<p class="font-semibold text-black">月額費用</p>
+									</div>
+								</div>
+							</td>
+							<td class="px-4 py-3 text-ms font-semibold border">3,000円〜＋従量課金</td>
+							<td class="px-4 py-3 text-ms font-semibold border">2,200円＋従量課金</td>
+							<td class="px-4 py-3 text-ms font-semibold border text-sky-600">定額制</td>
+						</tr>
+						<tr class="text-gray-700">
+							<td class="px-4 py-3 border">
+								<div class="flex items-center text-sm">
+									<div>
+										<p class="font-semibold text-black">従量課金</p>
+									</div>
+								</div>
+							</td>
+							<td class="px-4 py-3 text-ms font-semibold border">着信：3.3円/分</td>
+							<td class="px-4 py-3 text-ms font-semibold border">着信：7.7円/分</td>
+							<td class="px-4 py-3 text-ms font-semibold border text-sky-600">月額費用込</td>
+						</tr>
+						<tr class="text-gray-700">
+							<td class="px-4 py-3 border">
+								<div class="flex items-center text-sm">
+									<div>
+										<p class="font-semibold text-black">月額料金</p>
+										<p class="text-xs text-gray-600">例）20営業日・50件/日・2分/件</p>
+									</div>
+								</div>
+							</td>
+							<td class="px-4 py-3 text-ms font-semibold border">約19,450円</td>
+							<td class="px-4 py-3 text-ms font-semibold border">約22,000円</td>
+							<td class="px-4 py-3 text-ms font-semibold border text-sky-600">定額制15,400円（税込）</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 	<!-- FAQ -->
@@ -341,7 +442,7 @@
 						</ul>
 					</div>
 					<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 14,800 <span class="text-base">/ 月</span></div>
+						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 15,400<span class="text-base">（税込）</span> <span class="text-base">/ 月</span></div>
 					</div>
 				</div>
 
@@ -359,7 +460,7 @@
 						</ul>
 					</div>
 					<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 9,800 <span class="text-base">/ 月</span></div>
+						<div class="w-full pt-6 text-4xl font-bold text-center">¥ 9,900<span class="text-base">（税込）</span> <span class="text-base">/ 月</span></div>
 					</div>
 				</div>
 
