@@ -9,6 +9,7 @@ class Dashboard::Clinic::IvrRuleItemsController < Dashboard::Clinic::Application
   end
 
   def edit
+    @item = current_clinic.ivr_rule.items.find(params[:id])
   end
 
   def create
@@ -20,9 +21,18 @@ class Dashboard::Clinic::IvrRuleItemsController < Dashboard::Clinic::Application
     end
   end
 
+  def update
+    @item = current_clinic.ivr_rule.items.find(params[:id])
+    if @item.update(item_params)
+      redirect_to dashboard_clinic_ivr_rule_path(current_clinic)
+    else
+      render :edit
+    end
+  end
+
   private
 
     def item_params
-      params.require(:clinic_ivr_rule_item).permit(:name, :ancestry)
+      params.require(:clinic_ivr_rule_item).permit(:name, :body, :ancestry)
     end
 end
