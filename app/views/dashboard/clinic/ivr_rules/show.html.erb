@@ -1,5 +1,28 @@
 <% if @root %>
-  <%= render partial: 'tree', locals: { parent: @root } %>
+  <div class="ml-8">
+    <div class="relative flex justify-between py-5 p-4 bg-white my-4 border">
+      <div class="flex gap-x-4 pr-6 sm:w-1/2 sm:flex-none">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm font-semibold leading-6 text-gray-900">
+            <%= @root.name%>
+          </p>
+          <p class="mt-1 flex text-xs leading-5 text-gray-500">
+            <%= @root.category %>
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center justify-between gap-x-4 sm:w-1/2 sm:flex-none">
+        <%= link_to("編集する", edit_dashboard_clinic_ivr_rule_item_path(current_clinic, @root.id)) %>      
+      </div>
+    </div>
+  </div>
+  <hr>
+  <% if @root.has_children? %>
+    <% @root.children.each do |child| %>
+      <%= render partial: 'tree', locals: { parent: child } %>
+    <% end %>
+  <% end %>
+  <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic, item_id: @root.id)%>
 <% else %>
   <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic)%>
 <% end %>

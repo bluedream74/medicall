@@ -1,8 +1,24 @@
-<%= form_with(model: @item, url: dashboard_clinic_ivr_rule_items_path(current_clinic),class: "bg-white p-4") do |f| %>
-  <%= f.label "ルール名"%>
-  <%= f.text_field :name, class: "bg-gray-200 block" %>
-  <%= f.label "自動応答テキスト"%>
-  <%= f.text_area :body, class: "bg-gray-200 block" %>
+<%= form_with(model: [:dashboard, @item], class: "bg-white p-4") do |f| %>
+  <div class="mb-4 p-4">
+    <%= f.label "ルール名"%>
+    <%= f.text_field :name, class: "bg-gray-200 ml-4" %>
+  </div>
+  <div class="mb-4 p-4">
+    <%= f.label "対応方法"%>
+    <%= f.select :category, ClinicIvrRuleItem.categories.keys, {}, { class: "bg-gray-200 ml-4 border" }%>
+  </div>
+  <div class="mb-4 p-4">
+    <%= f.label "自動応答テキスト"%>
+    <%= f.text_area :body, class: "bg-gray-200 ml-4" %>
+  </div>
+  <div class="mb-4 p-4">
+    <%= f.label "SMS送信テキスト"%>
+    <%= f.text_area :sms_description, class: "bg-gray-200 ml-4" %>
+  </div>
+  <div class="mb-4 p-4">
+    <%= f.label "転送先電話番号"%>
+    <%= f.text_field :transfer_phone_number, class: "bg-gray-200 ml-4" %>
+  </div>
   <% if @item.ancestry.present? %>
     <%= f.hidden_field :ancestry, class: "bg-gray-200 block" %>
   <% end %>
