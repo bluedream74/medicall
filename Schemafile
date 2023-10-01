@@ -45,6 +45,9 @@ create_table "clinic_ivr_rule_items", force: :cascade do |t|
   t.string "name"
   t.text "body"
   t.string "ancestry", collation: "C"
+  t.integer "category", default: 0, null: false
+  t.string "transfer_phone_number"
+  t.text "sms_description"
   t.index ["ancestry"]
   t.index ["clinic_id"]
 end

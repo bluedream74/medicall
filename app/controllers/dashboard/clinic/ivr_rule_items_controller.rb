@@ -33,6 +33,6 @@ class Dashboard::Clinic::IvrRuleItemsController < Dashboard::Clinic::Application
   private
 
     def item_params
-      params.require(:clinic_ivr_rule_item).permit(:name, :body, :ancestry)
+      params.require(:clinic_ivr_rule_item).permit(:name, :body, :category, :ancestry, :sms_description, :transfer_phone_number)
     end
 end

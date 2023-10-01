@@ -4,24 +4,15 @@
       <div class="flex gap-x-4 pr-6 sm:w-1/2 sm:flex-none">
         <div class="min-w-0 flex-auto">
           <p class="text-sm font-semibold leading-6 text-gray-900">
-            <a href="#">
-              <span class="absolute inset-x-0 -top-px bottom-0"></span>
-              <%= @root.name%>
-            </a>
+            <%= @root.name%>
           </p>
           <p class="mt-1 flex text-xs leading-5 text-gray-500">
-            <a href="mailto:leslie.alexander@example.com" class="relative truncate hover:underline">leslie.alexander@example.com</a>
+            <%= @root.category %>
           </p>
         </div>
       </div>
       <div class="flex items-center justify-between gap-x-4 sm:w-1/2 sm:flex-none">
-        <div class="hidden sm:block">
-          <p class="text-sm leading-6 text-gray-900">Co-Founder / CEO</p>
-          <p class="mt-1 text-xs leading-5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">3h ago</time></p>
-        </div>
-        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-        </svg>
+        <%= link_to("編集する", edit_dashboard_clinic_ivr_rule_item_path(current_clinic, @root.id)) %>      
       </div>
     </div>
   </div>
@@ -31,7 +22,7 @@
       <%= render partial: 'tree', locals: { parent: child } %>
     <% end %>
   <% end %>
-  <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic)%>
+  <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic, item_id: @root.id)%>
 <% else %>
   <%= link_to "ルールを追加",  new_dashboard_clinic_ivr_rule_item_path(current_clinic)%>
 <% end %>
