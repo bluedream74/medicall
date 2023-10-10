@@ -28,8 +28,9 @@ Rails.application.routes.draw do
   end
 
   namespace :twilio do
-    post :welcome, controller: "welcome", action: :create
-    resources :ivr_responds, only: :create
+    post :welcome, controller: "welcome", action: :ivr_welcome
+    post :menu_selection, controller: "ivr_responds", action: :menu_selection
+    post :inquiry_selection_menu, controller: "ivr_responds", action: :inquiry_selection_menu
   end
 
   devise_for :users, path: "", path_names: { sign_up: "register", sign_in: "login", sign_out: "logout", edit: "account-edit" },

@@ -1,10 +1,10 @@
 #rubocop:todo all
 
 class Twilio::WelcomeController < Twilio::ApplicationController
-  def create
+  def ivr_welcome
     response = Twilio::TwiML::VoiceResponse.new {|r|
-      r.gather(numDigits: 1, action: "/twilio/ivr_responds") do |g|
-        g.say(message: "For sales, press 1. For support, press 2.")
+      r.gather(numDigits: 1, action: "/twilio/menu_selection") do |g|
+        g.say(message: "お電話ありがとうございます。〇〇クリニックです。webでの予約の方は1、お問い合わせ、及び電話予約の方は2、営業の方は3を押してください。", language: "ja-JP")
       end
       # If the user doesn't enter input, loop
       r.redirect("/twilio/welcome")
